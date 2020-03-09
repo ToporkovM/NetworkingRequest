@@ -15,6 +15,13 @@
 		50E48D24240D0BE2000D03A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50E48D22240D0BE2000D03A6 /* LaunchScreen.storyboard */; };
 		50E48D2F240D0BE2000D03A6 /* URLDownloadImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D2E240D0BE2000D03A6 /* URLDownloadImageTests.swift */; };
 		50E48D3A240D0BE2000D03A6 /* URLDownloadImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D39240D0BE2000D03A6 /* URLDownloadImageUITests.swift */; };
+		50E48D4A240D2482000D03A6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D49240D2482000D03A6 /* SecondViewController.swift */; };
+		50E48D4C240D52E2000D03A6 /* GETViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D4B240D52E2000D03A6 /* GETViewController.swift */; };
+		50E48D4E240E77EB000D03A6 /* POSTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D4D240E77EB000D03A6 /* POSTViewController.swift */; };
+		50E48D54240E94B0000D03A6 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D53240E94B0000D03A6 /* Course.swift */; };
+		50E48D59240E989A000D03A6 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D58240E989A000D03A6 /* CourseViewController.swift */; };
+		50E48D65240EB41E000D03A6 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D64240EB41E000D03A6 /* CourseTableViewCell.swift */; };
+		50E48D6B240FB3CD000D03A6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D6A240FB3CD000D03A6 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		50E48D35240D0BE2000D03A6 /* URLDownloadImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLDownloadImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E48D39240D0BE2000D03A6 /* URLDownloadImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDownloadImageUITests.swift; sourceTree = "<group>"; };
 		50E48D3B240D0BE2000D03A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50E48D49240D2482000D03A6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		50E48D4B240D52E2000D03A6 /* GETViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETViewController.swift; sourceTree = "<group>"; };
+		50E48D4D240E77EB000D03A6 /* POSTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSTViewController.swift; sourceTree = "<group>"; };
+		50E48D53240E94B0000D03A6 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		50E48D58240E989A000D03A6 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
+		50E48D64240EB41E000D03A6 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		50E48D6A240FB3CD000D03A6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +115,9 @@
 			children = (
 				50E48D17240D0BDF000D03A6 /* AppDelegate.swift */,
 				50E48D19240D0BDF000D03A6 /* SceneDelegate.swift */,
-				50E48D1B240D0BDF000D03A6 /* ViewController.swift */,
+				50E48D55240E94C3000D03A6 /* Model */,
+				50E48D51240E9467000D03A6 /* Controller */,
+				50E48D52240E9477000D03A6 /* View */,
 				50E48D1D240D0BDF000D03A6 /* Main.storyboard */,
 				50E48D20240D0BE2000D03A6 /* Assets.xcassets */,
 				50E48D22240D0BE2000D03A6 /* LaunchScreen.storyboard */,
@@ -126,6 +142,35 @@
 				50E48D3B240D0BE2000D03A6 /* Info.plist */,
 			);
 			path = URLDownloadImageUITests;
+			sourceTree = "<group>";
+		};
+		50E48D51240E9467000D03A6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				50E48D1B240D0BDF000D03A6 /* ViewController.swift */,
+				50E48D49240D2482000D03A6 /* SecondViewController.swift */,
+				50E48D4B240D52E2000D03A6 /* GETViewController.swift */,
+				50E48D4D240E77EB000D03A6 /* POSTViewController.swift */,
+				50E48D58240E989A000D03A6 /* CourseViewController.swift */,
+				50E48D6A240FB3CD000D03A6 /* WebViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		50E48D52240E9477000D03A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50E48D64240EB41E000D03A6 /* CourseTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		50E48D55240E94C3000D03A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				50E48D53240E94B0000D03A6 /* Course.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +304,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E48D54240E94B0000D03A6 /* Course.swift in Sources */,
+				50E48D4E240E77EB000D03A6 /* POSTViewController.swift in Sources */,
+				50E48D59240E989A000D03A6 /* CourseViewController.swift in Sources */,
+				50E48D6B240FB3CD000D03A6 /* WebViewController.swift in Sources */,
+				50E48D4A240D2482000D03A6 /* SecondViewController.swift in Sources */,
+				50E48D65240EB41E000D03A6 /* CourseTableViewCell.swift in Sources */,
 				50E48D1C240D0BDF000D03A6 /* ViewController.swift in Sources */,
+				50E48D4C240D52E2000D03A6 /* GETViewController.swift in Sources */,
 				50E48D18240D0BDF000D03A6 /* AppDelegate.swift in Sources */,
 				50E48D1A240D0BDF000D03A6 /* SceneDelegate.swift in Sources */,
 			);
