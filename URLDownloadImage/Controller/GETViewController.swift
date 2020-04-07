@@ -37,7 +37,10 @@ class GETViewController: UIViewController {
                     self.GETActivity.stopAnimating()
                 }
             } catch {
+                DispatchQueue.main.async {
                 self.GETTextView.text = "\(error)"
+                    self.GETActivity.stopAnimating()
+                }
             }
         }.resume()
         

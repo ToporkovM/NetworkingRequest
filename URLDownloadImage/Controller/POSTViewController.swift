@@ -47,7 +47,10 @@ class POSTViewController: UIViewController {
                     self.POSTActivity.stopAnimating()
                 }
             } catch {
+                DispatchQueue.main.async{
                 self.POSTTextView.text = "Error - \(error)"
+                    self.POSTActivity.stopAnimating()
+                }
             }
         }.resume()
         

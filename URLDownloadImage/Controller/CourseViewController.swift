@@ -12,6 +12,7 @@ class CourseViewController: UIViewController {
     private var courses = [Course]()
     private var coursName: String?
     private var courseUrl: String?
+    private let url = "https://swiftbook.ru/wp-content/uploads/api/api_courses"
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -21,22 +22,12 @@ class CourseViewController: UIViewController {
         self.tableView.dataSource = self
     }
     func fetchData() {
-        let jsonUrlString = "https://swiftbook.ru/wp-content/uploads/api/api_courses"
-        guard let url = URL(string: jsonUrlString) else { return }
-        URLSession.shared.dataTask(with: url)  { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                self.courses = try decoder.decode([Course].self, from: data)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print(error)
+        NetworkManager.fetchData(url: url) { (courses) in
+            self.courses = courses
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
-            
-        }.resume()
+        }
     }
     
    private func cofigureCell(cell: CourseTableViewCell, for indexPath: IndexPath) {
