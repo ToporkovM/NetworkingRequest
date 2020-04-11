@@ -9,6 +9,7 @@
 import UIKit
 
 class CourseViewController: UIViewController {
+    
     private var courses = [Course]()
     private var coursName: String?
     private var courseUrl: String?
@@ -17,10 +18,10 @@ class CourseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
+    
     func fetchData() {
         NetworkManager.fetchData(url: url) { (courses) in
             self.courses = courses
@@ -48,6 +49,17 @@ class CourseViewController: UIViewController {
     }
     
     }
+    
+    func fetchDataWithAlamofire() {
+        AlamofireNetworkRequest.sendRequest(url: url) { (courses) in
+            self.courses = courses
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

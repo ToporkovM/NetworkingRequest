@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class NetworkManager {
     //метод загрузки изображения
-    static func downloadImage(url: String,completion: @escaping (_ image: UIImage)->()) {
+    static func downloadImage(url: String, completion: @escaping (_ image: UIImage)->()) {
         guard let url = URL(string: url) else { return }
         let session = URLSession.shared
         //метод получающий содержимое по указанному url, а затем обрабатывающий полученную информацию
@@ -33,6 +33,7 @@ class NetworkManager {
                       decoder.keyDecodingStrategy = .convertFromSnakeCase
                       let courses = try decoder.decode([Course].self, from: data)
                     completion(courses)
+                    print(courses)
                   } catch let error {
                       print(error)
                   }

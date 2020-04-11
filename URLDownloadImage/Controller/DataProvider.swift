@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import Alamofire
 
 class DataProvider: NSObject {
-    
     private var downloadTask: URLSessionDownloadTask!
     
     var onProgress: ((Double) -> ())?

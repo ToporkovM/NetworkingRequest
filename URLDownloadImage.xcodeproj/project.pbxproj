@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502F28C12441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */; };
+		502F28C22441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50570A592437413B00E51F79 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50570A582437413B00E51F79 /* DataProvider.swift */; };
 		50570A5B2438A3E200E51F79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50570A5A2438A3E200E51F79 /* SceneDelegate.swift */; };
 		506DC95124164152000B6DB1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DC95024164152000B6DB1 /* NetworkManager.swift */; };
@@ -18,8 +20,6 @@
 		50E48D1F240D0BDF000D03A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50E48D1D240D0BDF000D03A6 /* Main.storyboard */; };
 		50E48D21240D0BE2000D03A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E48D20240D0BE2000D03A6 /* Assets.xcassets */; };
 		50E48D24240D0BE2000D03A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50E48D22240D0BE2000D03A6 /* LaunchScreen.storyboard */; };
-		50E48D2F240D0BE2000D03A6 /* URLDownloadImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D2E240D0BE2000D03A6 /* URLDownloadImageTests.swift */; };
-		50E48D3A240D0BE2000D03A6 /* URLDownloadImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D39240D0BE2000D03A6 /* URLDownloadImageUITests.swift */; };
 		50E48D4A240D2482000D03A6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D49240D2482000D03A6 /* SecondViewController.swift */; };
 		50E48D4C240D52E2000D03A6 /* GETViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D4B240D52E2000D03A6 /* GETViewController.swift */; };
 		50E48D4E240E77EB000D03A6 /* POSTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D4D240E77EB000D03A6 /* POSTViewController.swift */; };
@@ -27,31 +27,32 @@
 		50E48D59240E989A000D03A6 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D58240E989A000D03A6 /* CourseViewController.swift */; };
 		50E48D65240EB41E000D03A6 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D64240EB41E000D03A6 /* CourseTableViewCell.swift */; };
 		50E48D6B240FB3CD000D03A6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D6A240FB3CD000D03A6 /* WebViewController.swift */; };
+		50F7DBF1243F43D200510B11 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7DBF0243F43D200510B11 /* AlamofireNetworkRequest.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		50E48D2B240D0BE2000D03A6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50E48D0C240D0BDF000D03A6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 50E48D13240D0BDF000D03A6;
-			remoteInfo = URLDownloadImage;
+/* Begin PBXCopyFilesBuildPhase section */
+		502F28C32441A1CF00A9DE7A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				502F28C22441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		50E48D36240D0BE2000D03A6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50E48D0C240D0BDF000D03A6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 50E48D13240D0BDF000D03A6;
-			remoteInfo = URLDownloadImage;
-		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F685E05AB9169D92259F338 /* Pods-URLDownloadImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDownloadImage.release.xcconfig"; path = "Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage.release.xcconfig"; sourceTree = "<group>"; };
+		502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50570A582437413B00E51F79 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		50570A5A2438A3E200E51F79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		506DC95024164152000B6DB1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		506DC95224165106000B6DB1 /* imageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageProperties.swift; sourceTree = "<group>"; };
 		506DC9542416558D000B6DB1 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		5099A5C52441AA1E00F24637 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A1C2802416325300ED4344 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		50A1C2822416327B00ED4344 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		50E48D14240D0BDF000D03A6 /* URLDownloadImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLDownloadImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,12 +61,6 @@
 		50E48D20240D0BE2000D03A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50E48D23240D0BE2000D03A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50E48D25240D0BE2000D03A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50E48D2A240D0BE2000D03A6 /* URLDownloadImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLDownloadImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50E48D2E240D0BE2000D03A6 /* URLDownloadImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDownloadImageTests.swift; sourceTree = "<group>"; };
-		50E48D30240D0BE2000D03A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50E48D35240D0BE2000D03A6 /* URLDownloadImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLDownloadImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50E48D39240D0BE2000D03A6 /* URLDownloadImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDownloadImageUITests.swift; sourceTree = "<group>"; };
-		50E48D3B240D0BE2000D03A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50E48D49240D2482000D03A6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		50E48D4B240D52E2000D03A6 /* GETViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETViewController.swift; sourceTree = "<group>"; };
 		50E48D4D240E77EB000D03A6 /* POSTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSTViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +68,9 @@
 		50E48D58240E989A000D03A6 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		50E48D64240EB41E000D03A6 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		50E48D6A240FB3CD000D03A6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		50F7DBF0243F43D200510B11 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
+		50F7DC12243F479F00510B11 /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE3F4925E0DCA2CED36343EF /* Pods-URLDownloadImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDownloadImage.debug.xcconfig"; path = "Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,33 +78,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50E48D27240D0BE2000D03A6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50E48D32240D0BE2000D03A6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				502F28C12441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		502F28B72441A0BC00A9DE7A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				50F7DC12243F479F00510B11 /* Pods_URLDownloadImage.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		50E48D0B240D0BDF000D03A6 = {
 			isa = PBXGroup;
 			children = (
 				50E48D16240D0BDF000D03A6 /* URLDownloadImage */,
-				50E48D2D240D0BE2000D03A6 /* URLDownloadImageTests */,
-				50E48D38240D0BE2000D03A6 /* URLDownloadImageUITests */,
 				50E48D15240D0BDF000D03A6 /* Products */,
+				FDBE6C917AFDAB66A11DACA7 /* Pods */,
+				66B2BA476FE182F85A413491 /* Frameworks */,
+				502F28B72441A0BC00A9DE7A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,8 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				50E48D14240D0BDF000D03A6 /* URLDownloadImage.app */,
-				50E48D2A240D0BE2000D03A6 /* URLDownloadImageTests.xctest */,
-				50E48D35240D0BE2000D03A6 /* URLDownloadImageUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,29 +128,12 @@
 			path = URLDownloadImage;
 			sourceTree = "<group>";
 		};
-		50E48D2D240D0BE2000D03A6 /* URLDownloadImageTests */ = {
-			isa = PBXGroup;
-			children = (
-				50E48D2E240D0BE2000D03A6 /* URLDownloadImageTests.swift */,
-				50E48D30240D0BE2000D03A6 /* Info.plist */,
-			);
-			path = URLDownloadImageTests;
-			sourceTree = "<group>";
-		};
-		50E48D38240D0BE2000D03A6 /* URLDownloadImageUITests */ = {
-			isa = PBXGroup;
-			children = (
-				50E48D39240D0BE2000D03A6 /* URLDownloadImageUITests.swift */,
-				50E48D3B240D0BE2000D03A6 /* Info.plist */,
-			);
-			path = URLDownloadImageUITests;
-			sourceTree = "<group>";
-		};
 		50E48D51240E9467000D03A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				50A1C2802416325300ED4344 /* MainViewController.swift */,
 				506DC95024164152000B6DB1 /* NetworkManager.swift */,
+				50F7DBF0243F43D200510B11 /* AlamofireNetworkRequest.swift */,
 				50570A582437413B00E51F79 /* DataProvider.swift */,
 				50E48D49240D2482000D03A6 /* SecondViewController.swift */,
 				506DC95224165106000B6DB1 /* imageProperties.swift */,
@@ -188,6 +163,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		66B2BA476FE182F85A413491 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5099A5C52441AA1E00F24637 /* Alamofire.framework */,
+				502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDBE6C917AFDAB66A11DACA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE3F4925E0DCA2CED36343EF /* Pods-URLDownloadImage.debug.xcconfig */,
+				2F685E05AB9169D92259F338 /* Pods-URLDownloadImage.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,9 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50E48D3E240D0BE2000D03A6 /* Build configuration list for PBXNativeTarget "URLDownloadImage" */;
 			buildPhases = (
+				F72B7622B50BAD8D13E2F9C8 /* [CP] Check Pods Manifest.lock */,
 				50E48D10240D0BDF000D03A6 /* Sources */,
 				50E48D11240D0BDF000D03A6 /* Frameworks */,
 				50E48D12240D0BDF000D03A6 /* Resources */,
+				D0BD04E8BF0BDE9744BA39A7 /* [CP] Embed Pods Frameworks */,
+				502F28C32441A1CF00A9DE7A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,42 +203,6 @@
 			productName = URLDownloadImage;
 			productReference = 50E48D14240D0BDF000D03A6 /* URLDownloadImage.app */;
 			productType = "com.apple.product-type.application";
-		};
-		50E48D29240D0BE2000D03A6 /* URLDownloadImageTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 50E48D41240D0BE2000D03A6 /* Build configuration list for PBXNativeTarget "URLDownloadImageTests" */;
-			buildPhases = (
-				50E48D26240D0BE2000D03A6 /* Sources */,
-				50E48D27240D0BE2000D03A6 /* Frameworks */,
-				50E48D28240D0BE2000D03A6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				50E48D2C240D0BE2000D03A6 /* PBXTargetDependency */,
-			);
-			name = URLDownloadImageTests;
-			productName = URLDownloadImageTests;
-			productReference = 50E48D2A240D0BE2000D03A6 /* URLDownloadImageTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		50E48D34240D0BE2000D03A6 /* URLDownloadImageUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 50E48D44240D0BE2000D03A6 /* Build configuration list for PBXNativeTarget "URLDownloadImageUITests" */;
-			buildPhases = (
-				50E48D31240D0BE2000D03A6 /* Sources */,
-				50E48D32240D0BE2000D03A6 /* Frameworks */,
-				50E48D33240D0BE2000D03A6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				50E48D37240D0BE2000D03A6 /* PBXTargetDependency */,
-			);
-			name = URLDownloadImageUITests;
-			productName = URLDownloadImageUITests;
-			productReference = 50E48D35240D0BE2000D03A6 /* URLDownloadImageUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -256,14 +216,6 @@
 				TargetAttributes = {
 					50E48D13240D0BDF000D03A6 = {
 						CreatedOnToolsVersion = 11.3.1;
-					};
-					50E48D29240D0BE2000D03A6 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 50E48D13240D0BDF000D03A6;
-					};
-					50E48D34240D0BE2000D03A6 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 50E48D13240D0BDF000D03A6;
 					};
 				};
 			};
@@ -281,8 +233,6 @@
 			projectRoot = "";
 			targets = (
 				50E48D13240D0BDF000D03A6 /* URLDownloadImage */,
-				50E48D29240D0BE2000D03A6 /* URLDownloadImageTests */,
-				50E48D34240D0BE2000D03A6 /* URLDownloadImageUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,21 +248,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		50E48D28240D0BE2000D03A6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50E48D33240D0BE2000D03A6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D0BD04E8BF0BDE9744BA39A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F72B7622B50BAD8D13E2F9C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-URLDownloadImage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		50E48D10240D0BDF000D03A6 /* Sources */ = {
@@ -330,6 +308,7 @@
 				50E48D4A240D2482000D03A6 /* SecondViewController.swift in Sources */,
 				50E48D65240EB41E000D03A6 /* CourseTableViewCell.swift in Sources */,
 				50E48D4C240D52E2000D03A6 /* GETViewController.swift in Sources */,
+				50F7DBF1243F43D200510B11 /* AlamofireNetworkRequest.swift in Sources */,
 				50A1C2832416327B00ED4344 /* MainCollectionViewCell.swift in Sources */,
 				50E48D18240D0BDF000D03A6 /* AppDelegate.swift in Sources */,
 				50570A592437413B00E51F79 /* DataProvider.swift in Sources */,
@@ -337,36 +316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		50E48D26240D0BE2000D03A6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50E48D2F240D0BE2000D03A6 /* URLDownloadImageTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50E48D31240D0BE2000D03A6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50E48D3A240D0BE2000D03A6 /* URLDownloadImageUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		50E48D2C240D0BE2000D03A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 50E48D13240D0BDF000D03A6 /* URLDownloadImage */;
-			targetProxy = 50E48D2B240D0BE2000D03A6 /* PBXContainerItemProxy */;
-		};
-		50E48D37240D0BE2000D03A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 50E48D13240D0BDF000D03A6 /* URLDownloadImage */;
-			targetProxy = 50E48D36240D0BE2000D03A6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		50E48D1D240D0BDF000D03A6 /* Main.storyboard */ = {
@@ -504,6 +454,7 @@
 		};
 		50E48D3F240D0BE2000D03A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE3F4925E0DCA2CED36343EF /* Pods-URLDownloadImage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +473,7 @@
 		};
 		50E48D40240D0BE2000D03A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F685E05AB9169D92259F338 /* Pods-URLDownloadImage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,90 +487,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		50E48D42240D0BE2000D03A6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JVAJVCXNP9;
-				INFOPLIST_FILE = URLDownloadImageTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Max-T.URLDownloadImageTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URLDownloadImage.app/URLDownloadImage";
-			};
-			name = Debug;
-		};
-		50E48D43240D0BE2000D03A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JVAJVCXNP9;
-				INFOPLIST_FILE = URLDownloadImageTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Max-T.URLDownloadImageTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URLDownloadImage.app/URLDownloadImage";
-			};
-			name = Release;
-		};
-		50E48D45240D0BE2000D03A6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JVAJVCXNP9;
-				INFOPLIST_FILE = URLDownloadImageUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Max-T.URLDownloadImageUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = URLDownloadImage;
-			};
-			name = Debug;
-		};
-		50E48D46240D0BE2000D03A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JVAJVCXNP9;
-				INFOPLIST_FILE = URLDownloadImageUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Max-T.URLDownloadImageUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = URLDownloadImage;
 			};
 			name = Release;
 		};
@@ -639,24 +507,6 @@
 			buildConfigurations = (
 				50E48D3F240D0BE2000D03A6 /* Debug */,
 				50E48D40240D0BE2000D03A6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		50E48D41240D0BE2000D03A6 /* Build configuration list for PBXNativeTarget "URLDownloadImageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				50E48D42240D0BE2000D03A6 /* Debug */,
-				50E48D43240D0BE2000D03A6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		50E48D44240D0BE2000D03A6 /* Build configuration list for PBXNativeTarget "URLDownloadImageUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				50E48D45240D0BE2000D03A6 /* Debug */,
-				50E48D46240D0BE2000D03A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
