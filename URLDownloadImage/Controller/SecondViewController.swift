@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class SecondViewController: UIViewController {
     
     //создаем константу с url адресом картинки
@@ -18,21 +18,33 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        urlReguest()
-        activity.isHidden = true
-        activity.hidesWhenStopped = true
-        
+        self.activity.hidesWhenStopped = true
+        self.activity.startAnimating()
     }
     
     func urlReguest() {
-        //начало анимации
-        self.activity.startAnimating()
-        //видимость активити индикатора
-        self.activity.isHidden = false
+        
+       
         NetworkManager.downloadImage(url: url) { (image) in
             self.activity.stopAnimating()
             self.imageView.image = image
         }
     }
-    
+    //метод загрузки изображения с помощью alamofire
+    func fetchImageDataAlamofire() {
+        
+        AF.request(url).responseData { (responseData) in
+
+            switch responseData.result {
+
+            case .success(let data):
+                guard let image = UIImage(data: data) else { return }
+                self.activity.stopAnimating()
+                self.imageView.image = image
+
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
