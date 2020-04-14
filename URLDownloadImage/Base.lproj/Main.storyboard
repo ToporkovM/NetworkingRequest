@@ -143,6 +143,7 @@
                         <segue destination="iWb-hh-ztp" kind="show" identifier="UploadImage" id="Zox-zj-YN9"/>
                         <segue destination="NZQ-V6-H2e" kind="show" identifier="OurCoursesAlamofire" id="BI2-JZ-skU"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="imageAlamofire" id="YCH-28-lOi"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="DownloadImageAlamofire" id="Qz3-KP-dP5"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AyV-PR-Wze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,29 +158,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="58E-jN-GK7">
-                                <rect key="frame" x="20" y="88" width="374" height="437"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="58E-jN-GK7">
+                                <rect key="frame" x="0.0" y="88" width="414" height="437"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="0It-ht-eir"/>
-                                    <constraint firstAttribute="height" constant="437" id="IBS-rO-Riu"/>
+                                    <constraint firstAttribute="height" constant="437" id="vJL-ze-U8b"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="MsI-nT-fqf">
-                                <rect key="frame" x="191" y="293" width="33" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="MsI-nT-fqf">
+                                <rect key="frame" x="197" y="298" width="20" height="20"/>
                             </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gSp-2p-fJL">
+                                <rect key="frame" x="136" y="631" width="142" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25r-O3-TTJ">
+                                <rect key="frame" x="99" y="566" width="217" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gxd-j4-YHo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="58E-jN-GK7" secondAttribute="trailing" constant="20" id="N8h-GL-Pkc"/>
-                            <constraint firstItem="58E-jN-GK7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PuN-De-bsg"/>
-                            <constraint firstItem="58E-jN-GK7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZGs-0S-Nrw"/>
+                            <constraint firstItem="58E-jN-GK7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D0P-Zw-zfn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gSp-2p-fJL" secondAttribute="trailing" constant="116" id="Dlj-Dq-fqV"/>
+                            <constraint firstItem="58E-jN-GK7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="F5f-US-Gna"/>
+                            <constraint firstItem="25r-O3-TTJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="99" id="I4Z-7w-KY8"/>
+                            <constraint firstItem="MsI-nT-fqf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IIp-Px-EgN"/>
+                            <constraint firstItem="58E-jN-GK7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="biz-tP-rny"/>
+                            <constraint firstItem="MsI-nT-fqf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-140" id="d9m-Dh-O64"/>
+                            <constraint firstItem="gSp-2p-fJL" firstAttribute="top" secondItem="25r-O3-TTJ" secondAttribute="bottom" constant="44" id="dJY-ag-a8q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="25r-O3-TTJ" secondAttribute="trailing" constant="98" id="rir-a7-ohB"/>
+                            <constraint firstItem="gSp-2p-fJL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="116" id="vMy-uA-Mug"/>
+                            <constraint firstItem="25r-O3-TTJ" firstAttribute="top" secondItem="58E-jN-GK7" secondAttribute="bottom" constant="41" id="z4J-Nk-9KS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Download" id="Efa-jS-1jV"/>
                     <connections>
                         <outlet property="activity" destination="MsI-nT-fqf" id="v70-kF-Nlc"/>
+                        <outlet property="compledetProgress" destination="gSp-2p-fJL" id="vxA-pm-Qr2"/>
+                        <outlet property="completedLabel" destination="25r-O3-TTJ" id="kDW-T8-YRr"/>
                         <outlet property="imageView" destination="58E-jN-GK7" id="M3z-Y2-BUc"/>
                     </connections>
                 </viewController>
@@ -389,6 +410,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="BI2-JZ-skU"/>
-        <segue reference="YCH-28-lOi"/>
+        <segue reference="Qz3-KP-dP5"/>
     </inferredMetricsTieBreakers>
 </document>

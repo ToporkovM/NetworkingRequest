@@ -18,6 +18,7 @@ enum Actions: String, CaseIterable {
     case downloadFiles = "Download files"
     case ourCorsesAlamofire = "Our Courses (Alamofire)"
     case requestData = "requestData"
+    case downloadLargeImage = "Download Large Image"
 }
 
 private let reuseIdentifier = "Cell"
@@ -32,14 +33,12 @@ class MainViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidload")
         registerUserForNotification()
         /*передаем в переменную filePath местоположения файла захваченного из fileLocation(location), убираем алерт, отправляем уведомление
         */
         dataProvider.fileLocation = { (location) in
             self.filePath = location.absoluteString
             self.alert.dismiss(animated: true, completion: nil)
-            print("прочеканно")
             self.postNotifications()
             
         }
@@ -91,15 +90,14 @@ class MainViewController: UICollectionViewController {
             
         case "OurCourses":
             coursesVC?.fetchData()
-            
         case "OurCoursesAlamofire":
             coursesVC?.fetchDataWithAlamofire()
-            
         case "imageAlamofire":
             imageVC?.fetchImageDataAlamofire()
-            
         case "DownloadImage":
             imageVC?.urlReguest()
+        case "DownloadImageAlamofire":
+            imageVC?.downloadImageWithProgress()
         
         default:
             break
@@ -141,6 +139,8 @@ class MainViewController: UICollectionViewController {
 //            AlamofireNetworkRequest.requestCourseData(url: swiftBookApi)
 //            AlamofireNetworkRequest.requestCourseString(url: swiftBookApi)
             AlamofireNetworkRequest.request(url: swiftBookApi)
+        case Actions.downloadLargeImage:
+            performSegue(withIdentifier: "DownloadImageAlamofire", sender: self)
         }
     }
 }

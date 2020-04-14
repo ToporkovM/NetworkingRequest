@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		502F28C12441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */; };
+		30D1B8EB05F03B6469DFE58D /* libPods-URLDownloadImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF3E0194550C4DD5BD27B00 /* libPods-URLDownloadImage.a */; };
 		502F28C22441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50570A592437413B00E51F79 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50570A582437413B00E51F79 /* DataProvider.swift */; };
 		50570A5B2438A3E200E51F79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50570A5A2438A3E200E51F79 /* SceneDelegate.swift */; };
@@ -33,26 +33,27 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		502F28C32441A1CF00A9DE7A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
 				502F28C22441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2F685E05AB9169D92259F338 /* Pods-URLDownloadImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDownloadImage.release.xcconfig"; path = "Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage.release.xcconfig"; sourceTree = "<group>"; };
+		4BF3E0194550C4DD5BD27B00 /* libPods-URLDownloadImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-URLDownloadImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		503F7FBC2445E143004043E8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50570A582437413B00E51F79 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		50570A5A2438A3E200E51F79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		506DC95024164152000B6DB1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		506DC95224165106000B6DB1 /* imageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageProperties.swift; sourceTree = "<group>"; };
 		506DC9542416558D000B6DB1 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
-		5099A5C52441AA1E00F24637 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A1C2802416325300ED4344 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		50A1C2822416327B00ED4344 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		50E48D14240D0BDF000D03A6 /* URLDownloadImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLDownloadImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				502F28C12441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Frameworks */,
+				30D1B8EB05F03B6469DFE58D /* libPods-URLDownloadImage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,8 +167,8 @@
 		66B2BA476FE182F85A413491 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5099A5C52441AA1E00F24637 /* Alamofire.framework */,
-				502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */,
+				503F7FBC2445E143004043E8 /* Alamofire.framework */,
+				4BF3E0194550C4DD5BD27B00 /* libPods-URLDownloadImage.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,7 +193,6 @@
 				50E48D10240D0BDF000D03A6 /* Sources */,
 				50E48D11240D0BDF000D03A6 /* Frameworks */,
 				50E48D12240D0BDF000D03A6 /* Resources */,
-				D0BD04E8BF0BDE9744BA39A7 /* [CP] Embed Pods Frameworks */,
 				502F28C32441A1CF00A9DE7A /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -251,23 +251,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D0BD04E8BF0BDE9744BA39A7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F72B7622B50BAD8D13E2F9C8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -12,39 +12,63 @@ class SecondViewController: UIViewController {
     
     //создаем константу с url адресом картинки
     private let url = "https://applelives.com/wp-content/uploads/2016/05/NYfigU2-681x1079.jpg"
+    private let imageUrl = "https://i.imgur.com/3416rvI.jpg"
 
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var completedLabel: UILabel!
+
+    @IBOutlet weak var compledetProgress: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.activity.hidesWhenStopped = true
-        self.activity.startAnimating()
+        activity.hidesWhenStopped = true
+        activity.startAnimating()
+        compledetProgress.isHidden = true
+        completedLabel.isHidden = true
     }
     
     func urlReguest() {
-        
-       
+      
         NetworkManager.downloadImage(url: url) { (image) in
+            self.activity.stopAnimating()
+            self.imageView.image = image
+            print("urlRequest")
+        }
+    }
+    
+    //метод загрузки изображения с помощью alamofire
+    func fetchImageDataAlamofire() {
+        
+        AlamofireNetworkRequest.downloadImage(url: url) { (image) in
             self.activity.stopAnimating()
             self.imageView.image = image
         }
     }
-    //метод загрузки изображения с помощью alamofire
-    func fetchImageDataAlamofire() {
+    
+    //
+    func downloadImageWithProgress()  {
         
-        AF.request(url).responseData { (responseData) in
-
-            switch responseData.result {
-
-            case .success(let data):
-                guard let image = UIImage(data: data) else { return }
-                self.activity.stopAnimating()
-                self.imageView.image = image
-
-            case .failure(let error):
-                print(error)
-            }
+        AlamofireNetworkRequest.onProgress = { (progress) in
+            
+            self.compledetProgress.isHidden = false
+            self.compledetProgress.progress = Float(progress)
+        }
+        
+        AlamofireNetworkRequest.completed = { (completed) in
+            
+            print("label")
+            self.completedLabel.isHidden = false
+            self.completedLabel.text = String(completed)
+        }
+        
+        AlamofireNetworkRequest.downloadImageWithProgress(url: imageUrl) { (image) in
+            
+            print("downloadImageWithProgress")
+            self.completedLabel.isHidden = true
+            self.compledetProgress.isHidden = true
+            self.activity.stopAnimating()
+            self.imageView.image = image
         }
     }
 }
