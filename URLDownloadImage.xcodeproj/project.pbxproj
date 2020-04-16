@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -90,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				50F7DC12243F479F00510B11 /* Pods_URLDownloadImage.framework */,
+				502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
