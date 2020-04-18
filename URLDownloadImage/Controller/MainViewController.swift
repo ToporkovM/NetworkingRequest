@@ -21,6 +21,7 @@ enum Actions: String, CaseIterable {
     case downloadLargeImage = "Download Large Image"
     case postAlamofire = "POST Alamofire"
     case putAlamofire = "PUT Alamofire"
+    case uploadImageWithAlamofire = "Upload Alamofire"
 }
 
 private let reuseIdentifier = "Cell"
@@ -83,10 +84,13 @@ class MainViewController: UICollectionViewController {
     }
     //MARK: Navigation
     
+    // метод который по идентификатору сигвэя запускает определенные методы в выбранных вьюконтроллерах
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        //приводим константы к типам вьюконтроллеров
         let coursesVC = segue.destination as? CourseViewController
         let imageVC = segue.destination as? SecondViewController
+        let uploadVC = segue.destination as? UploadViewController
         
         switch segue.identifier {
             
@@ -104,6 +108,10 @@ class MainViewController: UICollectionViewController {
             imageVC?.urlReguest()
         case "DownloadImageAlamofire":
             imageVC?.downloadImageWithProgress()
+        case "UploadImage":
+            uploadVC?.uploadImage()
+        case "UploadImageWithAlamofire":
+            uploadVC?.uploadWithAlamofire()
         default:
             break
         }
@@ -150,6 +158,8 @@ class MainViewController: UICollectionViewController {
             performSegue(withIdentifier: "PostCourse", sender: self)
         case Actions.putAlamofire:
             performSegue(withIdentifier: "PutCourses", sender: self)
+        case Actions.uploadImageWithAlamofire:
+            performSegue(withIdentifier: "UploadImageWithAlamofire", sender: self)
         }
     }
 }

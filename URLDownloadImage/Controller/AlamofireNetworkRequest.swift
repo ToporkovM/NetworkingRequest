@@ -167,4 +167,25 @@ class AlamofireNetworkRequest {
             }
         }
     }
+    
+    // выгрузка изображения на сервер
+    static func uploadImageWithAlamofire(url: String, completion: @escaping (_ json: Any) -> ()) {
+        
+        guard let url = URL(string: url) else { return }
+        let image = UIImage(named: "фанта")!
+        let data = image.pngData()!
+        let httpHeaders = ["Authorization": "Client-ID c0332e5721870e4"]
+        AF.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(data, withName: "image")
+        }, to: url, headers: HTTPHeaders(httpHeaders)).responseJSON(completionHandler: { (data) in
+            switch data.result {
+            case .success(let data):
+                print("requst: ", data)
+                completion(data)
+            case .failure(let error):
+                print(error)
+            }
+        
+        }
+    )}
 }

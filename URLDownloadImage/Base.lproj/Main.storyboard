@@ -145,6 +145,7 @@
                         <segue destination="BYZ-38-t0r" kind="show" identifier="imageAlamofire" id="YCH-28-lOi"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="DownloadImageAlamofire" id="Qz3-KP-dP5"/>
                         <segue destination="NZQ-V6-H2e" kind="show" identifier="PostCourse" id="8oA-SD-bVD"/>
+                        <segue destination="iWb-hh-ztp" kind="show" identifier="UploadImageWithAlamofire" id="5tP-Su-f96"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AyV-PR-Wze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -412,5 +413,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="O8E-fs-kbD"/>
         <segue reference="Qz3-KP-dP5"/>
+        <segue reference="5tP-Su-f96"/>
     </inferredMetricsTieBreakers>
 </document>

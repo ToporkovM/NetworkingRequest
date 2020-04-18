@@ -17,22 +17,26 @@ class UploadViewController: UIViewController {
         super.viewDidLoad()
         uploadActivity.isHidden = true
         uploadActivity.hidesWhenStopped = true
-        uploadImage()
-        
+        uploadActivity.startAnimating()
     }
     
-    private func uploadImage() {
-        uploadActivity.isHidden = false
-        uploadActivity.startAnimating()
+    func uploadImage() {
+        
         NetworkManager.uploadImage(url: url) { (json) in
             DispatchQueue.main.async {
                 self.uploadTextView.text = "Cсылка - \(json)"
                 self.uploadActivity.stopAnimating()
-                
             }
         }
     }
     
-    
-    
+    func uploadWithAlamofire() {
+        
+        AlamofireNetworkRequest.uploadImageWithAlamofire(url: url) { (json) in
+            DispatchQueue.main.async {
+                self.uploadActivity.stopAnimating()
+                self.uploadTextView.text = "Ссылка в link - \(json)"
+            }
+        }
+    }
 }
