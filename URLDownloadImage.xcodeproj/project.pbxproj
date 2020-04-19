@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30D1B8EB05F03B6469DFE58D /* libPods-URLDownloadImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF3E0194550C4DD5BD27B00 /* libPods-URLDownloadImage.a */; };
+		38EFD787FBBD0ABBE8B26233 /* Pods_URLDownloadImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96D9BB34AF87E330E3FDEC1 /* Pods_URLDownloadImage.framework */; };
 		502F28C22441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		503F7FC5244C961D004043E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F7FC4244C961D004043E8 /* LoginViewController.swift */; };
 		50570A592437413B00E51F79 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50570A582437413B00E51F79 /* DataProvider.swift */; };
 		50570A5B2438A3E200E51F79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50570A5A2438A3E200E51F79 /* SceneDelegate.swift */; };
 		506DC95124164152000B6DB1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DC95024164152000B6DB1 /* NetworkManager.swift */; };
@@ -46,9 +47,10 @@
 
 /* Begin PBXFileReference section */
 		2F685E05AB9169D92259F338 /* Pods-URLDownloadImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDownloadImage.release.xcconfig"; path = "Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage.release.xcconfig"; sourceTree = "<group>"; };
-		4BF3E0194550C4DD5BD27B00 /* libPods-URLDownloadImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-URLDownloadImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		503F7FBC2445E143004043E8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		503F7FC3244C8711004043E8 /* URLDownloadImage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = URLDownloadImage.entitlements; sourceTree = "<group>"; };
+		503F7FC4244C961D004043E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50570A582437413B00E51F79 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		50570A5A2438A3E200E51F79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		506DC95024164152000B6DB1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		50E48D6A240FB3CD000D03A6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		50F7DBF0243F43D200510B11 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
 		50F7DC12243F479F00510B11 /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C96D9BB34AF87E330E3FDEC1 /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3F4925E0DCA2CED36343EF /* Pods-URLDownloadImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDownloadImage.debug.xcconfig"; path = "Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30D1B8EB05F03B6469DFE58D /* libPods-URLDownloadImage.a in Frameworks */,
+				38EFD787FBBD0ABBE8B26233 /* Pods_URLDownloadImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +120,7 @@
 		50E48D16240D0BDF000D03A6 /* URLDownloadImage */ = {
 			isa = PBXGroup;
 			children = (
+				503F7FC3244C8711004043E8 /* URLDownloadImage.entitlements */,
 				50E48D17240D0BDF000D03A6 /* AppDelegate.swift */,
 				50570A5A2438A3E200E51F79 /* SceneDelegate.swift */,
 				50E48D55240E94C3000D03A6 /* Model */,
@@ -133,6 +137,7 @@
 		50E48D51240E9467000D03A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				503F7FC4244C961D004043E8 /* LoginViewController.swift */,
 				50A1C2802416325300ED4344 /* MainViewController.swift */,
 				506DC95024164152000B6DB1 /* NetworkManager.swift */,
 				50F7DBF0243F43D200510B11 /* AlamofireNetworkRequest.swift */,
@@ -169,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				503F7FBC2445E143004043E8 /* Alamofire.framework */,
-				4BF3E0194550C4DD5BD27B00 /* libPods-URLDownloadImage.a */,
+				C96D9BB34AF87E330E3FDEC1 /* Pods_URLDownloadImage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				50E48D11240D0BDF000D03A6 /* Frameworks */,
 				50E48D12240D0BDF000D03A6 /* Resources */,
 				502F28C32441A1CF00A9DE7A /* Embed Frameworks */,
+				4AEBE74E87C578C82327FE87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +258,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4AEBE74E87C578C82327FE87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F72B7622B50BAD8D13E2F9C8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +317,7 @@
 				50E48D4C240D52E2000D03A6 /* GETViewController.swift in Sources */,
 				50F7DBF1243F43D200510B11 /* AlamofireNetworkRequest.swift in Sources */,
 				50A1C2832416327B00ED4344 /* MainCollectionViewCell.swift in Sources */,
+				503F7FC5244C961D004043E8 /* LoginViewController.swift in Sources */,
 				50E48D18240D0BDF000D03A6 /* AppDelegate.swift in Sources */,
 				50570A592437413B00E51F79 /* DataProvider.swift in Sources */,
 				50A1C2812416325300ED4344 /* MainViewController.swift in Sources */,
@@ -441,6 +465,7 @@
 			baseConfigurationReference = FE3F4925E0DCA2CED36343EF /* Pods-URLDownloadImage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = URLDownloadImage/URLDownloadImage.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JVAJVCXNP9;
 				INFOPLIST_FILE = URLDownloadImage/Info.plist;
@@ -460,6 +485,7 @@
 			baseConfigurationReference = 2F685E05AB9169D92259F338 /* Pods-URLDownloadImage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = URLDownloadImage/URLDownloadImage.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JVAJVCXNP9;
 				INFOPLIST_FILE = URLDownloadImage/Info.plist;

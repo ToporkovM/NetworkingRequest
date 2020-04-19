@@ -1,16 +1,32 @@
 PODS:
   - Alamofire (5.1.0)
+  - FBSDKCoreKit (6.4.0):
+    - FBSDKCoreKit/Basics (= 6.4.0)
+    - FBSDKCoreKit/Core (= 6.4.0)
+  - FBSDKCoreKit/Basics (6.4.0)
+  - FBSDKCoreKit/Core (6.4.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (6.4.0):
+    - FBSDKLoginKit/Login (= 6.4.0)
+  - FBSDKLoginKit/Login (6.4.0):
+    - FBSDKCoreKit (~> 6.4.0)
 
 DEPENDENCIES:
   - Alamofire
+  - FBSDKCoreKit
+  - FBSDKLoginKit
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - FBSDKCoreKit
+    - FBSDKLoginKit
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  FBSDKCoreKit: 7bea330627be2601a9079413c615313746aa9f7c
+  FBSDKLoginKit: 8694d063972c7c524f9d33ba2f9d890e54fbe8ad
 
-PODFILE CHECKSUM: c92d502ada20eb1361d1ee0e34ef9ce4f907e7e0
+PODFILE CHECKSUM: ff6f857fb32d35f4a64e87b8aae790acf3657aab
 
 COCOAPODS: 1.9.1

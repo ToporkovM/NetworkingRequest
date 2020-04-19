@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -49,11 +50,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
             bgSessionCompletionHandler = completionHandler
         }
-        
     }
-
-
-
-
-
+        
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        let openURLContext = Array(URLContexts).first
+        if openURLContext != nil {
+            if let URL = openURLContext?.url, let annotation = openURLContext?.options.annotation {
+                ApplicationDelegate.shared.application(UIApplication.shared, open: URL, sourceApplication: openURLContext?.options.sourceApplication, annotation: annotation)
+            }
+        }
+    }
 }

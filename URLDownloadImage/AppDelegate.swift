@@ -7,13 +7,27 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+
+let primaryColor = UIColor(red: 210/255, green: 109/255, blue: 108/255, alpha: 1)
+let secondaryColor = UIColor(red: 107/255, green: 148/255, blue: 230/255, alpha: 1)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+        
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+                return true
+    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        let appId = Settings.appID
+        if url.scheme != nil && url.scheme!.hasPrefix("fb\(String(describing: appId))") && url.host ==  "authorize" {
+    return ApplicationDelegate.shared.application(app, open: url, options: options)
+    }
+    return false
     }
 
     // MARK: UISceneSession Lifecycle
