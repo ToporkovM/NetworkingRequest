@@ -83,7 +83,7 @@ class CourseViewController: UIViewController {
     
     func putRequest() {
         AlamofireNetworkRequest.putRequest(url: putUrl) { (courses) in
-            self.courses = courses
+             self.courses = courses
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XDe-go-sow">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fAq-37-F3p">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -146,6 +146,7 @@
                         <segue destination="BYZ-38-t0r" kind="show" identifier="DownloadImageAlamofire" id="Qz3-KP-dP5"/>
                         <segue destination="NZQ-V6-H2e" kind="show" identifier="PostCourse" id="8oA-SD-bVD"/>
                         <segue destination="iWb-hh-ztp" kind="show" identifier="UploadImageWithAlamofire" id="5tP-Su-f96"/>
+                        <segue destination="NZQ-V6-H2e" kind="show" identifier="PutCourses" id="p7b-qX-2pw"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AyV-PR-Wze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -209,6 +210,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1810.144927536232" y="114.50892857142857"/>
+        </scene>
+        <!--User ProfileVC-->
+        <scene sceneID="0AK-0U-0Iu">
+            <objects>
+                <viewController id="WMH-vf-eRK" customClass="UserProfileVC" customModule="URLDownloadImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ORZ-1L-dB0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autorization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-aI-yRe">
+                                <rect key="frame" x="1" y="86" width="412" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="zlk-s9-xsd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NL9-aI-yRe" firstAttribute="leading" secondItem="nhL-El-R2n" secondAttribute="leading" constant="1" id="HZT-AW-vus"/>
+                            <constraint firstItem="nhL-El-R2n" firstAttribute="trailing" secondItem="NL9-aI-yRe" secondAttribute="trailing" constant="1" id="P4x-u7-CrD"/>
+                            <constraint firstItem="NL9-aI-yRe" firstAttribute="top" secondItem="nhL-El-R2n" secondAttribute="top" constant="42" id="sgZ-F5-jPD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nhL-El-R2n"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="RTx-mH-Uaf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yDH-AD-u5J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1022" y="905"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dgg-2C-Pds">
+            <objects>
+                <tabBarController id="fAq-37-F3p" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wid-Er-QT8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="52g-bK-nFS" kind="relationship" relationship="viewControllers" id="LTa-Nq-alm"/>
+                        <segue destination="WMH-vf-eRK" kind="relationship" relationship="viewControllers" id="nMF-lD-BCP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R0w-19-ipA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1548" y="115"/>
         </scene>
         <!--POST Запрос-->
         <scene sceneID="DGL-OS-IJ0">
@@ -352,14 +403,14 @@
         <scene sceneID="CgM-gu-Ckh">
             <objects>
                 <viewController id="ylp-Pj-cHh" customClass="WebViewController" customModule="URLDownloadImage" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mZ3-G0-F2o">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="mZ3-G0-F2o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hf0-Sl-cni">
                                 <rect key="frame" x="0.0" y="88" width="414" height="2"/>
                             </progressView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-ju-cxa">
+                            <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-ju-cxa">
                                 <rect key="frame" x="0.0" y="88" width="414" height="788"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -394,7 +445,7 @@
         <!--Login View Controller-->
         <scene sceneID="2RL-re-4fE">
             <objects>
-                <viewController id="XDe-go-sow" customClass="LoginViewController" customModule="URLDownloadImage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="XDe-go-sow" customClass="LoginViewController" customModule="URLDownloadImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mh2-Zd-hYf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -420,12 +471,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3t1-Ix-5Rk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1501.449275362319" y="114.50892857142857"/>
+            <point key="canvasLocation" x="-2410" y="115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZPZ-Pz-SJM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="52g-bK-nFS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="doc" catalog="system" id="QfR-dT-fJr"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="LNE-nO-BgL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5DB-Gp-dX0">
@@ -442,8 +494,12 @@
             <point key="canvasLocation" x="-304" y="115"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="doc" catalog="system" width="56" height="64"/>
+        <image name="person" catalog="system" width="64" height="58"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="O8E-fs-kbD"/>
+        <segue reference="p7b-qX-2pw"/>
         <segue reference="Qz3-KP-dP5"/>
         <segue reference="5tP-Su-f96"/>
     </inferredMetricsTieBreakers>

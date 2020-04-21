@@ -10,11 +10,13 @@
 		38EFD787FBBD0ABBE8B26233 /* Pods_URLDownloadImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96D9BB34AF87E330E3FDEC1 /* Pods_URLDownloadImage.framework */; };
 		502F28C22441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		503F7FC5244C961D004043E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F7FC4244C961D004043E8 /* LoginViewController.swift */; };
+		5044428C244EF26A0098C90D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5044428B244EF26A0098C90D /* GoogleService-Info.plist */; };
 		50570A592437413B00E51F79 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50570A582437413B00E51F79 /* DataProvider.swift */; };
 		50570A5B2438A3E200E51F79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50570A5A2438A3E200E51F79 /* SceneDelegate.swift */; };
 		506DC95124164152000B6DB1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DC95024164152000B6DB1 /* NetworkManager.swift */; };
 		506DC95324165106000B6DB1 /* imageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DC95224165106000B6DB1 /* imageProperties.swift */; };
 		506DC9552416558D000B6DB1 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DC9542416558D000B6DB1 /* UploadViewController.swift */; };
+		508D6C14244DAD600069F3D4 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D6C13244DAD600069F3D4 /* UserProfileVC.swift */; };
 		50A1C2812416325300ED4344 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1C2802416325300ED4344 /* MainViewController.swift */; };
 		50A1C2832416327B00ED4344 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1C2822416327B00ED4344 /* MainCollectionViewCell.swift */; };
 		50E48D18240D0BDF000D03A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D17240D0BDF000D03A6 /* AppDelegate.swift */; };
@@ -51,11 +53,13 @@
 		503F7FBC2445E143004043E8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		503F7FC3244C8711004043E8 /* URLDownloadImage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = URLDownloadImage.entitlements; sourceTree = "<group>"; };
 		503F7FC4244C961D004043E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5044428B244EF26A0098C90D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50570A582437413B00E51F79 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		50570A5A2438A3E200E51F79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		506DC95024164152000B6DB1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		506DC95224165106000B6DB1 /* imageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageProperties.swift; sourceTree = "<group>"; };
 		506DC9542416558D000B6DB1 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		508D6C13244DAD600069F3D4 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		50A1C2802416325300ED4344 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		50A1C2822416327B00ED4344 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		50E48D14240D0BDF000D03A6 /* URLDownloadImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLDownloadImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +134,7 @@
 				50E48D20240D0BE2000D03A6 /* Assets.xcassets */,
 				50E48D22240D0BE2000D03A6 /* LaunchScreen.storyboard */,
 				50E48D25240D0BE2000D03A6 /* Info.plist */,
+				5044428B244EF26A0098C90D /* GoogleService-Info.plist */,
 			);
 			path = URLDownloadImage;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				503F7FC4244C961D004043E8 /* LoginViewController.swift */,
+				508D6C13244DAD600069F3D4 /* UserProfileVC.swift */,
 				50A1C2802416325300ED4344 /* MainViewController.swift */,
 				506DC95024164152000B6DB1 /* NetworkManager.swift */,
 				50F7DBF0243F43D200510B11 /* AlamofireNetworkRequest.swift */,
@@ -250,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50E48D24240D0BE2000D03A6 /* LaunchScreen.storyboard in Resources */,
+				5044428C244EF26A0098C90D /* GoogleService-Info.plist in Resources */,
 				50E48D21240D0BE2000D03A6 /* Assets.xcassets in Resources */,
 				50E48D1F240D0BDF000D03A6 /* Main.storyboard in Resources */,
 			);
@@ -309,6 +316,7 @@
 				50E48D54240E94B0000D03A6 /* Course.swift in Sources */,
 				50E48D4E240E77EB000D03A6 /* POSTViewController.swift in Sources */,
 				50E48D59240E989A000D03A6 /* CourseViewController.swift in Sources */,
+				508D6C14244DAD600069F3D4 /* UserProfileVC.swift in Sources */,
 				50570A5B2438A3E200E51F79 /* SceneDelegate.swift in Sources */,
 				50E48D6B240FB3CD000D03A6 /* WebViewController.swift in Sources */,
 				506DC95324165106000B6DB1 /* imageProperties.swift in Sources */,

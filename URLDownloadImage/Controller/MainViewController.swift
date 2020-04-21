@@ -8,6 +8,8 @@
 
 import UIKit
 import UserNotifications
+import FBSDKCoreKit
+import FirebaseAuth
 
 enum Actions: String, CaseIterable {
     case post = "POST"
@@ -43,9 +45,9 @@ class MainViewController: UICollectionViewController {
             self.filePath = location.absoluteString
             self.alert.dismiss(animated: true, completion: nil)
             self.postNotifications()
-            
         }
         
+        chekLoggIn()
     }
     
     private func showAlert() {
@@ -162,6 +164,7 @@ class MainViewController: UICollectionViewController {
             performSegue(withIdentifier: "UploadImageWithAlamofire", sender: self)
         }
     }
+    
 }
 
 extension MainViewController {
@@ -181,3 +184,25 @@ extension MainViewController {
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 }
+
+//MARK: Facebook SDK
+    
+    extension MainViewController {
+        
+        //если пользователь не авторизирован, то вернуть LoginViewController
+        private func chekLoggIn() {
+            
+            if Auth.auth().currentUser == nil {
+                
+                DispatchQueue.main.async {
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let loginViewController = storyboard.instantiateViewController(identifier: "LoginViewController") as! LoginViewController
+                    loginViewController.modalPresentationStyle = .fullScreen
+                    self.present(loginViewController, animated: true)
+                    return
+                }
+            }
+        }
+    }
+

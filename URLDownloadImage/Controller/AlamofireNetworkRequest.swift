@@ -148,12 +148,12 @@ class AlamofireNetworkRequest {
             "imageUrl": "https://swiftbook.ru/wp-content/uploads/sites/2/2018/08/notifications-course-with-background.png"
         ]
         AF.request(url, method: .put, parameters: putUserData).validate().responseJSON { (responseJSON) in
-            
+
             guard let statusCode = responseJSON.response?.statusCode else { return }
             print(statusCode)
-            
+
             switch responseJSON.result {
-                
+
             case .success(let value):
                 guard
                     let jsonObject = value as? [String:Any],
