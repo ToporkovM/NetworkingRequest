@@ -9,13 +9,19 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
     
+    var userProfile: UserProfile?
+    
     lazy var fbLoginButton = { () -> FBLoginButton in
         let loginButton = FBLoginButton()
-//        loginButton.frame = CGRect(x: 32, y: 320, width: self.view.frame.width - 64, height: 50)
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.frame = CGRect(x: 32, y: 490, width: self.view.frame.width - 64, height: 50)
+        loginButton.layer.cornerRadius = 5
+        loginButton.layer.borderWidth = 0.5
+        
+//        loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.delegate = self
         return loginButton
     }()
@@ -23,9 +29,9 @@ class LoginViewController: UIViewController {
     // реализация кастомной кнопки
     lazy var customFbButton = { () -> UIButton in
         let customButtom = UIButton()
-        customButtom.frame = CGRect(x: 32, y: 320, width: self.view.frame.width - 64, height: 50)
+        customButtom.frame = CGRect(x: 32, y: 420, width: self.view.frame.width - 64, height: 50)
         customButtom.backgroundColor = .blue
-        customButtom.setTitle("Sign in", for: .normal)
+        customButtom.setTitle("Sign in and save data", for: .normal)
         customButtom.titleLabel?.textColor = .white
         customButtom.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         customButtom.layer.cornerRadius = 5
@@ -41,12 +47,12 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setGradientBackground()
         updateView()
-        layoutButton()
+//        layoutButton()
     }
     
     private func updateView() {
         view.addSubview(fbLoginButton)
-//        view.addSubview(customFbButton)
+        view.addSubview(customFbButton)
     }
     
     private func setGradientBackground() {
@@ -85,7 +91,7 @@ extension LoginViewController: LoginButtonDelegate {
         
         //если токен авторизации верный, то закрываем LoginViewController
             guard AccessToken.isCurrentAccessTokenActive else { return }
-            self.closeVC()
+        self.authInToFirebase()
         
     }
     
@@ -98,7 +104,6 @@ extension LoginViewController: LoginButtonDelegate {
     private func closeVC() {
         
         dismiss(animated: true)
-        authInToFirebase()
     }
     
     //авторизация в firbase с помощью facebook
@@ -113,10 +118,46 @@ extension LoginViewController: LoginButtonDelegate {
                 print("error: ", error)
                 return
             }
-            print("successfully logget in to Firbase, user \(user!)")
+            print("successfully logget in to Firbase, user")
+            self.fetchFacebookFields()
         }
     }
     
+    //запрос параметров из facebook и добавление их в структуру UserProfile
+    private func fetchFacebookFields() {
+        
+        GraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start { (_, result, error) in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let userData = result as? [String: Any] else { return }
+            print(userData)
+            self.userProfile = UserProfile(data: userData)
+            print(self.userProfile?.name ?? "nil")
+            self.savedDataInToFirebase()
+        }
+    }
+    
+    //сохранение данных из facebook в fairbase database
+    private func savedDataInToFirebase() {
+        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let userData = ["id": userProfile?.id as Any, "name": userProfile?.name as Any] as [String: Any]
+        let value = [uid: userData]
+        
+        Database.database().reference().child("users").updateChildValues(value) { (error, _) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            print("Successfully saved in to firebase")
+            self.closeVC()
+        }
+    }
+
     //селектор для кастомной кнопки
     @ objc private func targetCustomButton() {
         
@@ -129,7 +170,7 @@ extension LoginViewController: LoginButtonDelegate {
             guard let result = result else { return }
             if result.isCancelled { return }
             else {
-                self.closeVC()
+                self.authInToFirebase()
             }
         }
     }

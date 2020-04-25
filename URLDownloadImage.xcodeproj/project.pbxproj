@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38EFD787FBBD0ABBE8B26233 /* Pods_URLDownloadImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96D9BB34AF87E330E3FDEC1 /* Pods_URLDownloadImage.framework */; };
+		50084019245426CE009B9567 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50084018245426CE009B9567 /* UserProfile.swift */; };
 		502F28C22441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		503F7FC5244C961D004043E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F7FC4244C961D004043E8 /* LoginViewController.swift */; };
 		5044428C244EF26A0098C90D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5044428B244EF26A0098C90D /* GoogleService-Info.plist */; };
@@ -31,6 +31,7 @@
 		50E48D65240EB41E000D03A6 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D64240EB41E000D03A6 /* CourseTableViewCell.swift */; };
 		50E48D6B240FB3CD000D03A6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D6A240FB3CD000D03A6 /* WebViewController.swift */; };
 		50F7DBF1243F43D200510B11 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7DBF0243F43D200510B11 /* AlamofireNetworkRequest.swift */; };
+		7ED081786184B03BB864CC72 /* Pods_URLDownloadImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F45B6420A46D28025ACE1FB /* Pods_URLDownloadImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,7 +49,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F45B6420A46D28025ACE1FB /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F685E05AB9169D92259F338 /* Pods-URLDownloadImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDownloadImage.release.xcconfig"; path = "Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage.release.xcconfig"; sourceTree = "<group>"; };
+		50084018245426CE009B9567 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		503F7FBC2445E143004043E8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		503F7FC3244C8711004043E8 /* URLDownloadImage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = URLDownloadImage.entitlements; sourceTree = "<group>"; };
@@ -77,7 +80,6 @@
 		50E48D6A240FB3CD000D03A6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		50F7DBF0243F43D200510B11 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
 		50F7DC12243F479F00510B11 /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C96D9BB34AF87E330E3FDEC1 /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3F4925E0DCA2CED36343EF /* Pods-URLDownloadImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDownloadImage.debug.xcconfig"; path = "Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38EFD787FBBD0ABBE8B26233 /* Pods_URLDownloadImage.framework in Frameworks */,
+				7ED081786184B03BB864CC72 /* Pods_URLDownloadImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				50E48D53240E94B0000D03A6 /* Course.swift */,
+				50084018245426CE009B9567 /* UserProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				503F7FBC2445E143004043E8 /* Alamofire.framework */,
-				C96D9BB34AF87E330E3FDEC1 /* Pods_URLDownloadImage.framework */,
+				0F45B6420A46D28025ACE1FB /* Pods_URLDownloadImage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,7 +209,7 @@
 				50E48D11240D0BDF000D03A6 /* Frameworks */,
 				50E48D12240D0BDF000D03A6 /* Resources */,
 				502F28C32441A1CF00A9DE7A /* Embed Frameworks */,
-				4AEBE74E87C578C82327FE87 /* [CP] Embed Pods Frameworks */,
+				8B1413010CC9A7965F38EB67 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,7 +268,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4AEBE74E87C578C82327FE87 /* [CP] Embed Pods Frameworks */ = {
+		8B1413010CC9A7965F38EB67 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -325,6 +328,7 @@
 				50E48D4C240D52E2000D03A6 /* GETViewController.swift in Sources */,
 				50F7DBF1243F43D200510B11 /* AlamofireNetworkRequest.swift in Sources */,
 				50A1C2832416327B00ED4344 /* MainCollectionViewCell.swift in Sources */,
+				50084019245426CE009B9567 /* UserProfile.swift in Sources */,
 				503F7FC5244C961D004043E8 /* LoginViewController.swift in Sources */,
 				50E48D18240D0BDF000D03A6 /* AppDelegate.swift in Sources */,
 				50570A592437413B00E51F79 /* DataProvider.swift in Sources */,
