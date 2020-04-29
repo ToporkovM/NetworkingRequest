@@ -15,41 +15,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="VQC-Mk-Xva">
-                                <rect key="frame" x="0.0" y="-259" width="414" height="1155"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Test App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rd-CE-dzW">
                                 <rect key="frame" x="20" y="178" width="374" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="S4X-mY-pJP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="34"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
+                                <color key="textColor" red="0.052228249609470367" green="0.70164984464645386" blue="0.98513561487197876" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="13" height="3"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create by MaxT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fo-Fq-8VF">
-                                <rect key="frame" x="139" y="839" width="137" height="23"/>
+                                <rect key="frame" x="20" y="830" width="374" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="23" id="jsp-ex-vZB"/>
+                                    <constraint firstAttribute="height" constant="32" id="IJz-Jb-iL1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
-                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <color key="textColor" red="0.073953159153461456" green="0.62677967548370361" blue="0.95474714040756226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-px-KSP">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                                <color key="color" red="0.073953159153461456" green="0.62677967548370361" blue="0.95474714040756226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="0.96096247411766422" blue="0.25388772715617836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.74503832308685169" green="0.68508470953341016" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VQC-Mk-Xva" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CHL-7r-TOe"/>
-                            <constraint firstItem="7fo-Fq-8VF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="Iiw-VE-W3v"/>
-                            <constraint firstItem="VQC-Mk-Xva" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="J2v-rF-F8z"/>
+                            <constraint firstItem="7fo-Fq-8VF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HvW-vU-ChZ"/>
                             <constraint firstItem="5Rd-CE-dzW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JAh-aE-Kku"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Rd-CE-dzW" secondAttribute="trailing" constant="20" id="Kdd-z1-pUp"/>
-                            <constraint firstItem="VQC-Mk-Xva" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PQ4-eD-ht8"/>
                             <constraint firstItem="5Rd-CE-dzW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="134" id="RLs-zy-ua7"/>
-                            <constraint firstAttribute="bottom" secondItem="VQC-Mk-Xva" secondAttribute="bottom" id="nf6-zP-1ug"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7fo-Fq-8VF" secondAttribute="trailing" constant="138" id="oiZ-v1-OBX"/>
-                            <constraint firstItem="7fo-Fq-8VF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pVM-PV-L8p"/>
+                            <constraint firstItem="zgQ-px-KSP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="hjg-Bh-tvk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7fo-Fq-8VF" secondAttribute="trailing" constant="20" id="jbf-uf-LPt"/>
+                            <constraint firstItem="7fo-Fq-8VF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kTy-eX-6re"/>
+                            <constraint firstItem="zgQ-px-KSP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kyC-qr-nXb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -59,7 +59,4 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="back" width="640" height="1136"/>
-    </resources>
 </document>

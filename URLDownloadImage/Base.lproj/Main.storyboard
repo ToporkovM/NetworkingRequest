@@ -107,21 +107,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="340" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-mL-Qfi">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="340" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-mL-Qfi">
                                             <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="28"/>
+                                            <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="23"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="r3m-mL-Qfi" firstAttribute="top" secondItem="jRD-Dt-X8W" secondAttribute="top" constant="20" symbolic="YES" id="1ar-qp-vq6"/>
-                                        <constraint firstAttribute="bottom" secondItem="r3m-mL-Qfi" secondAttribute="bottom" constant="20" symbolic="YES" id="Cz4-NU-FYJ"/>
-                                        <constraint firstItem="r3m-mL-Qfi" firstAttribute="leading" secondItem="jRD-Dt-X8W" secondAttribute="leading" constant="20" symbolic="YES" id="LOT-WB-x74"/>
-                                        <constraint firstAttribute="trailing" secondItem="r3m-mL-Qfi" secondAttribute="trailing" constant="20" symbolic="YES" id="ljo-ii-ruI"/>
+                                        <constraint firstItem="r3m-mL-Qfi" firstAttribute="top" secondItem="jRD-Dt-X8W" secondAttribute="top" id="1ar-qp-vq6"/>
+                                        <constraint firstAttribute="bottom" secondItem="r3m-mL-Qfi" secondAttribute="bottom" id="Cz4-NU-FYJ"/>
+                                        <constraint firstItem="r3m-mL-Qfi" firstAttribute="leading" secondItem="jRD-Dt-X8W" secondAttribute="leading" id="LOT-WB-x74"/>
+                                        <constraint firstAttribute="trailing" secondItem="r3m-mL-Qfi" secondAttribute="trailing" id="ljo-ii-ruI"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.24588671326637268" green="0.79585611820220947" blue="0.91375094652175903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="customSize" width="340" height="100"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -223,17 +223,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autorization" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-aI-yRe">
-                                <rect key="frame" x="20" y="44" width="374" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autorization" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-aI-yRe">
+                                <rect key="frame" x="20" y="44" width="374" height="159"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Wvp-zY-Cur"/>
+                                    <constraint firstAttribute="height" constant="159" id="Wvp-zY-Cur"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="22"/>
+                                <color key="textColor" red="0.067687518894672394" green="0.61917752027511597" blue="0.8422272801399231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="yqN-cl-6CU">
-                                <rect key="frame" x="197" y="69" width="20" height="20"/>
+                                <rect key="frame" x="197" y="118" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -241,7 +241,7 @@
                             <constraint firstItem="nhL-El-R2n" firstAttribute="trailing" secondItem="NL9-aI-yRe" secondAttribute="trailing" constant="20" id="044-JV-npM"/>
                             <constraint firstItem="NL9-aI-yRe" firstAttribute="top" secondItem="nhL-El-R2n" secondAttribute="top" id="Q4D-kk-iCw"/>
                             <constraint firstItem="NL9-aI-yRe" firstAttribute="leading" secondItem="nhL-El-R2n" secondAttribute="leading" constant="20" id="XtK-el-dcc"/>
-                            <constraint firstItem="yqN-cl-6CU" firstAttribute="centerY" secondItem="NL9-aI-yRe" secondAttribute="centerY" id="Zg6-dy-hvy"/>
+                            <constraint firstItem="yqN-cl-6CU" firstAttribute="centerY" secondItem="NL9-aI-yRe" secondAttribute="centerY" constant="4.5" id="Zg6-dy-hvy"/>
                             <constraint firstItem="yqN-cl-6CU" firstAttribute="centerX" secondItem="NL9-aI-yRe" secondAttribute="centerX" id="gWC-K0-uNt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nhL-El-R2n"/>
@@ -467,20 +467,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autorization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CW7-IF-4th">
-                                <rect key="frame" x="1" y="94" width="412" height="35"/>
+                                <rect key="frame" x="0.0" y="73" width="412" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Nwu-ZU-mk1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="26"/>
+                                <color key="textColor" red="0.03147704154253006" green="0.028713591396808624" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="0nU-gN-DOI" firstAttribute="trailing" secondItem="CW7-IF-4th" secondAttribute="trailing" constant="1" id="C7j-h2-6Pl"/>
-                            <constraint firstItem="CW7-IF-4th" firstAttribute="leading" secondItem="0nU-gN-DOI" secondAttribute="leading" constant="1" id="lu8-L8-Hdc"/>
-                            <constraint firstItem="CW7-IF-4th" firstAttribute="top" secondItem="0nU-gN-DOI" secondAttribute="top" constant="50" id="ziA-MX-XJh"/>
+                            <constraint firstItem="0nU-gN-DOI" firstAttribute="trailing" secondItem="CW7-IF-4th" secondAttribute="trailing" constant="2" id="C7j-h2-6Pl"/>
+                            <constraint firstItem="CW7-IF-4th" firstAttribute="leading" secondItem="0nU-gN-DOI" secondAttribute="leading" id="lu8-L8-Hdc"/>
+                            <constraint firstItem="CW7-IF-4th" firstAttribute="top" secondItem="0nU-gN-DOI" secondAttribute="top" constant="29" id="ziA-MX-XJh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0nU-gN-DOI"/>
                     </view>

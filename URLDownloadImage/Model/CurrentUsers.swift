@@ -11,11 +11,15 @@ import Foundation
 struct CurrentUsers {
     let name: String
     let id: String
+    let email: String
     
-    init?(id: String, name: [String: Any]) {
+    init?(id: String, data: [String: Any]) {
         
-        guard let name = name["name"] as? String else { return nil }
+        guard let name = data["name"] as? String else { return nil }
+        guard let email = data["email"] as? String else { return nil }
         self.id = id
         self.name = name
+        self.email = email
+        
     }
 }

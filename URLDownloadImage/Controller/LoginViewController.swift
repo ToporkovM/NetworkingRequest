@@ -179,7 +179,9 @@ extension LoginViewController: LoginButtonDelegate {
     private func savedDataInToFirebase() {
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let userData = ["id": userProfile?.id as Any, "name": userProfile?.name as Any] as [String: Any]
+        let userData = ["id": userProfile?.id as Any,
+                        "name": userProfile?.name as Any,
+                        "email": userProfile?.email as Any] as [String: Any]
         let value = [uid: userData]
         
         Database.database().reference().child("users").updateChildValues(value) { (error, _) in
@@ -224,6 +226,12 @@ extension LoginViewController: GIDSignInDelegate {
         }
         
         print("successfully logget into Google")
+        
+        if let userName = user.profile.name, let email = user.profile.email {
+           
+            let data = ["name": userName, "email": email]
+            userProfile = UserProfile(data: data)
+        }
         //если проходит аутентификация
         guard let authentication = user.authentication else { return }
         //создаем токен удостоверяющий личность
@@ -239,7 +247,7 @@ extension LoginViewController: GIDSignInDelegate {
             }
             
             print("successfully logget into Firbase with Google")
-                self.closeVC()
+            self.savedDataInToFirebase()
 
         }
     }
