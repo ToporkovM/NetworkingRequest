@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class UserProfileVC: UIViewController {
     
@@ -22,13 +23,22 @@ class UserProfileVC: UIViewController {
         loginButton.delegate = self
         return loginButton
     }()
-
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientBackground()
         updateView()
+        userNameLabel.isHidden = true
 
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        fetchDataFirebase()
     }
     
     private func updateView() {
@@ -72,6 +82,31 @@ extension UserProfileVC: LoginButtonDelegate {
             }
         } catch let error {
             print("failed \(error.localizedDescription)")
+        }
+    }
+    
+    /* проверяет авторизацию пользователя, если активна, то делает запрос в ветку child("users")
+     и child(uid), получает из них данные парсит в модель CurrentUsers и подставляет имя в Label
+    */
+    private func fetchDataFirebase() {
+        
+        if Auth.auth().currentUser != nil {
+            
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            Database.database().reference()
+                .child("users")
+                .child(uid)
+                .observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    guard let usersData = snapshot.value as? [String: Any] else { return }
+                    let currentUsers = CurrentUsers(id: uid, name: usersData)
+                    self.activityIndicator.stopAnimating()
+                    self.userNameLabel.isHidden = false
+                    self.userNameLabel.text = "\(currentUsers?.name ?? "Default user") \n log out"
+                    
+                }) { (error) in
+                    print(error)
+            }
         }
     }
     

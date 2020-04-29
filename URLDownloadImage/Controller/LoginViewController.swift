@@ -10,14 +10,21 @@ import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
 import FirebaseDatabase
+import Firebase
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
+   
     
     var userProfile: UserProfile?
     
+    // реализация дефолтной кнопки facebook
     lazy var fbLoginButton = { () -> FBLoginButton in
         let loginButton = FBLoginButton()
-        loginButton.frame = CGRect(x: 32, y: 490, width: self.view.frame.width - 64, height: 50)
+        loginButton.frame = CGRect(x: 32,
+                                   y: 490,
+                                   width: self.view.frame.width - 64,
+                                   height: 50)
         loginButton.layer.cornerRadius = 5
         loginButton.layer.borderWidth = 0.5
         
@@ -26,38 +33,66 @@ class LoginViewController: UIViewController {
         return loginButton
     }()
     
-    // реализация кастомной кнопки
+    // реализация кастомной кнопки facebook
     lazy var customFbButton = { () -> UIButton in
         let customButtom = UIButton()
-        customButtom.frame = CGRect(x: 32, y: 420, width: self.view.frame.width - 64, height: 50)
+        customButtom.frame = CGRect(x: 32,
+                                    y: 420,
+                                    width: self.view.frame.width - 64,
+                                    height: 50)
         customButtom.backgroundColor = .blue
         customButtom.setTitle("Sign in and save data", for: .normal)
         customButtom.titleLabel?.textColor = .white
         customButtom.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         customButtom.layer.cornerRadius = 5
         customButtom.layer.borderWidth = 0.5
-        customButtom.addTarget(self, action: #selector(targetCustomButton), for: .touchUpInside)
+        customButtom.addTarget(self,
+                               action: #selector(targetCustomButton),
+                               for: .touchUpInside)
         
         return customButtom
     }()
     
+    // реализация кастомной кнопки google
+    lazy var googleButton: GIDSignInButton = {
+        let loginButton = GIDSignInButton()
+        loginButton.frame = CGRect(x: 32,
+                                   y: 560,
+                                   width: self.view.frame.width - 64,
+                                   height: 50)
+        loginButton.layer.cornerRadius = 5
+        return loginButton
+    }()
     
-
+    
+    //MARK: ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientBackground()
         updateView()
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance()?.presentingViewController = self
 //        layoutButton()
     }
+    
+    //MARK: Private func
     
     private func updateView() {
         view.addSubview(fbLoginButton)
         view.addSubview(customFbButton)
+        view.addSubview(googleButton)
     }
     
     private func setGradientBackground() {
-        let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
+        let colorTop =  UIColor(red: 255.0/255.0,
+                                green: 149.0/255.0,
+                                blue: 0.0/255.0,
+                                alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 255.0/255.0,
+                                  green: 94.0/255.0,
+                                  blue: 58.0/255.0,
+                                  alpha: 1.0).cgColor
 
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
@@ -118,7 +153,7 @@ extension LoginViewController: LoginButtonDelegate {
                 print("error: ", error)
                 return
             }
-            print("successfully logget in to Firbase, user")
+            print("successfully logget into Firbase, user")
             self.fetchFacebookFields()
         }
     }
@@ -153,7 +188,7 @@ extension LoginViewController: LoginButtonDelegate {
                 print(error.localizedDescription)
                 return
             }
-            print("Successfully saved in to firebase")
+            print("Successfully saved into firebase")
             self.closeVC()
         }
     }
@@ -174,4 +209,40 @@ extension LoginViewController: LoginButtonDelegate {
             }
         }
     }
+}
+
+//MARK: Google SDK
+
+extension LoginViewController: GIDSignInDelegate {
+    
+    //отслеживает регистрацию через google и регестрирует в firebase
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        if let error = error {
+            print("unsuccessful attempt", error)
+            return
+        }
+        
+        print("successfully logget into Google")
+        //если проходит аутентификация
+        guard let authentication = user.authentication else { return }
+        //создаем токен удостоверяющий личность
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+        accessToken: authentication.accessToken)
+        
+        //входим в fairbase с данными пользователя
+        Auth.auth().signIn(with: credential) { (user, error) in
+            
+            if let error = error {
+                
+                print("Error", error)
+            }
+            
+            print("successfully logget into Firbase with Google")
+                self.closeVC()
+
+        }
+    }
+    
+    
 }

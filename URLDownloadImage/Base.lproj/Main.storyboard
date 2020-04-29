@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fAq-37-F3p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fAq-37-F3p">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,12 +24,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="SuV-hW-9sg">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="SuV-hW-9sg">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SuV-hW-9sg" firstAttribute="centerY" secondItem="VKt-fn-K8D" secondAttribute="centerY" id="MFf-PM-Zhi"/>
+                            <constraint firstItem="SuV-hW-9sg" firstAttribute="centerX" secondItem="VKt-fn-K8D" secondAttribute="centerX" id="c4E-d7-hOa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5IQ-wn-8R0"/>
                     </view>
                     <navigationItem key="navigationItem" title="GET Запрос" id="Ojo-jy-XEw"/>
@@ -57,16 +60,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="cXJ-ve-2iL">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="cXJ-ve-2iL">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8Eo-ji-xfb" firstAttribute="top" secondItem="3ey-1V-DwT" secondAttribute="top" id="ITb-Xl-FMd"/>
+                            <constraint firstItem="cXJ-ve-2iL" firstAttribute="centerX" secondItem="JnD-ZX-VSt" secondAttribute="centerX" id="JO2-Cd-Mer"/>
                             <constraint firstItem="8Eo-ji-xfb" firstAttribute="leading" secondItem="3ey-1V-DwT" secondAttribute="leading" constant="20" id="MWX-wL-ZMG"/>
                             <constraint firstAttribute="bottom" secondItem="8Eo-ji-xfb" secondAttribute="bottom" constant="20" symbolic="YES" id="OhM-0H-qVO"/>
+                            <constraint firstItem="cXJ-ve-2iL" firstAttribute="centerY" secondItem="JnD-ZX-VSt" secondAttribute="centerY" id="TfO-0O-cuy"/>
                             <constraint firstItem="3ey-1V-DwT" firstAttribute="trailing" secondItem="8Eo-ji-xfb" secondAttribute="trailing" constant="20" id="e70-Xp-cDi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3ey-1V-DwT"/>
@@ -168,7 +172,7 @@
                                 </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="MsI-nT-fqf">
-                                <rect key="frame" x="197" y="298" width="20" height="20"/>
+                                <rect key="frame" x="197" y="296.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gSp-2p-fJL">
                                 <rect key="frame" x="136" y="631" width="142" height="2"/>
@@ -185,13 +189,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="MsI-nT-fqf" firstAttribute="centerY" secondItem="58E-jN-GK7" secondAttribute="centerY" id="Bkz-ER-SCw"/>
                             <constraint firstItem="58E-jN-GK7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D0P-Zw-zfn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gSp-2p-fJL" secondAttribute="trailing" constant="116" id="Dlj-Dq-fqV"/>
+                            <constraint firstItem="MsI-nT-fqf" firstAttribute="centerX" secondItem="58E-jN-GK7" secondAttribute="centerX" id="DuL-t1-tIs"/>
                             <constraint firstItem="58E-jN-GK7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="F5f-US-Gna"/>
                             <constraint firstItem="25r-O3-TTJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="99" id="I4Z-7w-KY8"/>
-                            <constraint firstItem="MsI-nT-fqf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IIp-Px-EgN"/>
                             <constraint firstItem="58E-jN-GK7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="biz-tP-rny"/>
-                            <constraint firstItem="MsI-nT-fqf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-140" id="d9m-Dh-O64"/>
                             <constraint firstItem="gSp-2p-fJL" firstAttribute="top" secondItem="25r-O3-TTJ" secondAttribute="bottom" constant="44" id="dJY-ag-a8q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="25r-O3-TTJ" secondAttribute="trailing" constant="98" id="rir-a7-ohB"/>
                             <constraint firstItem="gSp-2p-fJL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="116" id="vMy-uA-Mug"/>
@@ -219,29 +223,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autorization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-aI-yRe">
-                                <rect key="frame" x="1" y="86" width="412" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autorization" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-aI-yRe">
+                                <rect key="frame" x="20" y="44" width="374" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="zlk-s9-xsd"/>
+                                    <constraint firstAttribute="height" constant="70" id="Wvp-zY-Cur"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="yqN-cl-6CU">
+                                <rect key="frame" x="197" y="69" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="NL9-aI-yRe" firstAttribute="leading" secondItem="nhL-El-R2n" secondAttribute="leading" constant="1" id="HZT-AW-vus"/>
-                            <constraint firstItem="nhL-El-R2n" firstAttribute="trailing" secondItem="NL9-aI-yRe" secondAttribute="trailing" constant="1" id="P4x-u7-CrD"/>
-                            <constraint firstItem="NL9-aI-yRe" firstAttribute="top" secondItem="nhL-El-R2n" secondAttribute="top" constant="42" id="sgZ-F5-jPD"/>
+                            <constraint firstItem="nhL-El-R2n" firstAttribute="trailing" secondItem="NL9-aI-yRe" secondAttribute="trailing" constant="20" id="044-JV-npM"/>
+                            <constraint firstItem="NL9-aI-yRe" firstAttribute="top" secondItem="nhL-El-R2n" secondAttribute="top" id="Q4D-kk-iCw"/>
+                            <constraint firstItem="NL9-aI-yRe" firstAttribute="leading" secondItem="nhL-El-R2n" secondAttribute="leading" constant="20" id="XtK-el-dcc"/>
+                            <constraint firstItem="yqN-cl-6CU" firstAttribute="centerY" secondItem="NL9-aI-yRe" secondAttribute="centerY" id="Zg6-dy-hvy"/>
+                            <constraint firstItem="yqN-cl-6CU" firstAttribute="centerX" secondItem="NL9-aI-yRe" secondAttribute="centerX" id="gWC-K0-uNt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nhL-El-R2n"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="RTx-mH-Uaf"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="yqN-cl-6CU" id="wy9-cC-7wl"/>
+                        <outlet property="userNameLabel" destination="NL9-aI-yRe" id="52Q-W4-IY6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDH-AD-u5J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1022" y="905"/>
+            <point key="canvasLocation" x="-1023.1884057971015" y="904.6875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dgg-2C-Pds">
@@ -277,12 +290,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ts4-rq-Acl">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ts4-rq-Acl">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ts4-rq-Acl" firstAttribute="centerY" secondItem="lJ9-oR-hCi" secondAttribute="centerY" id="DKc-qN-LnZ"/>
+                            <constraint firstItem="Ts4-rq-Acl" firstAttribute="centerX" secondItem="lJ9-oR-hCi" secondAttribute="centerX" id="YBE-px-JBH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="t0Z-9v-7JB"/>
                     </view>
                     <navigationItem key="navigationItem" title="POST Запрос" id="kdy-1N-slm"/>
@@ -403,14 +419,14 @@
         <scene sceneID="CgM-gu-Ckh">
             <objects>
                 <viewController id="ylp-Pj-cHh" customClass="WebViewController" customModule="URLDownloadImage" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="mZ3-G0-F2o">
+                    <view key="view" contentMode="scaleToFill" id="mZ3-G0-F2o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hf0-Sl-cni">
                                 <rect key="frame" x="0.0" y="88" width="414" height="2"/>
                             </progressView>
-                            <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-ju-cxa">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-ju-cxa">
                                 <rect key="frame" x="0.0" y="88" width="414" height="788"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -494,13 +510,13 @@
             <point key="canvasLocation" x="-304" y="115"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="doc" catalog="system" width="56" height="64"/>
-        <image name="person" catalog="system" width="64" height="58"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="p7b-qX-2pw"/>
         <segue reference="Qz3-KP-dP5"/>
         <segue reference="5tP-Su-f96"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="doc" catalog="system" width="115" height="128"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+    </resources>
 </document>
