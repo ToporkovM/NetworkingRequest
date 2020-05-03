@@ -15,41 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Test App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rd-CE-dzW">
-                                <rect key="frame" x="20" y="178" width="374" height="84"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="S4X-mY-pJP"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NR" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rd-CE-dzW">
+                                <rect key="frame" x="183" y="429" width="51" height="40"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
                                 <color key="textColor" red="0.052228249609470367" green="0.70164984464645386" blue="0.98513561487197876" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="13" height="3"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create by MaxT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fo-Fq-8VF">
-                                <rect key="frame" x="20" y="830" width="374" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="IJz-Jb-iL1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                <color key="textColor" red="0.073953159153461456" green="0.62677967548370361" blue="0.95474714040756226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-px-KSP">
-                                <rect key="frame" x="197" y="443" width="20" height="20"/>
-                                <color key="color" red="0.073953159153461456" green="0.62677967548370361" blue="0.95474714040756226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96096247411766422" blue="0.25388772715617836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.74503832308685169" green="0.68508470953341016" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7fo-Fq-8VF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HvW-vU-ChZ"/>
-                            <constraint firstItem="5Rd-CE-dzW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JAh-aE-Kku"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Rd-CE-dzW" secondAttribute="trailing" constant="20" id="Kdd-z1-pUp"/>
-                            <constraint firstItem="5Rd-CE-dzW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="134" id="RLs-zy-ua7"/>
-                            <constraint firstItem="zgQ-px-KSP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="hjg-Bh-tvk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7fo-Fq-8VF" secondAttribute="trailing" constant="20" id="jbf-uf-LPt"/>
-                            <constraint firstItem="7fo-Fq-8VF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kTy-eX-6re"/>
-                            <constraint firstItem="zgQ-px-KSP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kyC-qr-nXb"/>
+                            <constraint firstItem="5Rd-CE-dzW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="1.5" id="Js2-CE-4lJ"/>
+                            <constraint firstItem="5Rd-CE-dzW" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-4" id="cFc-Au-iW0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

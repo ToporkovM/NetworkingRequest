@@ -13,20 +13,35 @@ import FirebaseDatabase
 import Firebase
 import GoogleSignIn
 
+
 class LoginViewController: UIViewController {
    
     
     var userProfile: UserProfile?
     
+    //кнопка входа через email
+    lazy var emailButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 32,
+        y: 560,
+        width: self.view.frame.width - 64,
+        height: 50)
+        button.setTitle("Sign in with email", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.addTarget(self, action: #selector(presentSignInVC), for: .touchUpInside)
+        return button
+    }()
+    
     // реализация дефолтной кнопки facebook
     lazy var fbLoginButton = { () -> FBLoginButton in
         let loginButton = FBLoginButton()
         loginButton.frame = CGRect(x: 32,
-                                   y: 490,
+                                   y: 440,
                                    width: self.view.frame.width - 64,
                                    height: 50)
         loginButton.layer.cornerRadius = 5
-        loginButton.layer.borderWidth = 0.5
+        loginButton.setTitle("Sig In", for: .normal)
         
 //        loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.delegate = self
@@ -34,30 +49,29 @@ class LoginViewController: UIViewController {
     }()
     
     // реализация кастомной кнопки facebook
-    lazy var customFbButton = { () -> UIButton in
+    /* lazy var customFbButton = { () -> UIButton in
         let customButtom = UIButton()
         customButtom.frame = CGRect(x: 32,
-                                    y: 420,
+                                    y: 380,
                                     width: self.view.frame.width - 64,
                                     height: 50)
-        customButtom.backgroundColor = .blue
+        customButtom.backgroundColor = UIColor(red: 10.0/255, green: 113.0/255, blue: 255.0/255, alpha: 1)
         customButtom.setTitle("Sign in and save data", for: .normal)
         customButtom.titleLabel?.textColor = .white
         customButtom.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         customButtom.layer.cornerRadius = 5
-        customButtom.layer.borderWidth = 0.5
         customButtom.addTarget(self,
                                action: #selector(targetCustomButton),
                                for: .touchUpInside)
         
         return customButtom
-    }()
+    }() */
     
     // реализация кастомной кнопки google
     lazy var googleButton: GIDSignInButton = {
         let loginButton = GIDSignInButton()
         loginButton.frame = CGRect(x: 32,
-                                   y: 560,
+                                   y: 500,
                                    width: self.view.frame.width - 64,
                                    height: 50)
         loginButton.layer.cornerRadius = 5
@@ -80,18 +94,19 @@ class LoginViewController: UIViewController {
     
     private func updateView() {
         view.addSubview(fbLoginButton)
-        view.addSubview(customFbButton)
+        //view.addSubview(customFbButton)
         view.addSubview(googleButton)
+        view.addSubview(emailButton)
     }
     
     private func setGradientBackground() {
-        let colorTop =  UIColor(red: 255.0/255.0,
-                                green: 149.0/255.0,
-                                blue: 0.0/255.0,
+        let colorTop =  UIColor(red: 11.0/255.0,
+                                green: 26.0/255.0,
+                                blue: 189.0/255.0,
                                 alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 255.0/255.0,
-                                  green: 94.0/255.0,
-                                  blue: 58.0/255.0,
+        let colorBottom = UIColor(red: 112.0/255.0,
+                                  green: 122.0/255.0,
+                                  blue: 224.0/255.0,
                                   alpha: 1.0).cgColor
 
         let gradientLayer = CAGradientLayer()
@@ -109,6 +124,13 @@ class LoginViewController: UIViewController {
         fbLoginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         fbLoginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 180).isActive = true
                 
+    }
+    
+    @objc func presentSignInVC() {
+        
+        
+        performSegue(withIdentifier: "SignIn", sender: self)
+        
     }
     
 }
@@ -175,7 +197,7 @@ extension LoginViewController: LoginButtonDelegate {
         }
     }
     
-    //сохранение данных из facebook в fairbase database
+    //сохранение данных в fairbase database
     private func savedDataInToFirebase() {
         
         guard let uid = Auth.auth().currentUser?.uid else { return }

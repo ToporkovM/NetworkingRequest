@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		50084019245426CE009B9567 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50084018245426CE009B9567 /* UserProfile.swift */; };
 		5008401B2456BC27009B9567 /* CurrentUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008401A2456BC27009B9567 /* CurrentUsers.swift */; };
+		5026FCCA245C163C00972273 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026FCC9245C163C00972273 /* SignInViewController.swift */; };
+		5026FCCC245C164E00972273 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026FCCB245C164E00972273 /* SignUpViewController.swift */; };
 		502F28C22441A1CF00A9DE7A /* Pods_URLDownloadImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		503F7FC5244C961D004043E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F7FC4244C961D004043E8 /* LoginViewController.swift */; };
 		5044428C244EF26A0098C90D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5044428B244EF26A0098C90D /* GoogleService-Info.plist */; };
@@ -54,6 +56,8 @@
 		2F685E05AB9169D92259F338 /* Pods-URLDownloadImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDownloadImage.release.xcconfig"; path = "Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage.release.xcconfig"; sourceTree = "<group>"; };
 		50084018245426CE009B9567 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		5008401A2456BC27009B9567 /* CurrentUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUsers.swift; sourceTree = "<group>"; };
+		5026FCC9245C163C00972273 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5026FCCB245C164E00972273 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		502F28C02441A1CF00A9DE7A /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		503F7FBC2445E143004043E8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		503F7FC3244C8711004043E8 /* URLDownloadImage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = URLDownloadImage.entitlements; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 		50E48D51240E9467000D03A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5026FCC9245C163C00972273 /* SignInViewController.swift */,
+				5026FCCB245C164E00972273 /* SignUpViewController.swift */,
 				503F7FC4244C961D004043E8 /* LoginViewController.swift */,
 				508D6C13244DAD600069F3D4 /* UserProfileVC.swift */,
 				50A1C2802416325300ED4344 /* MainViewController.swift */,
@@ -335,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5026FCCC245C164E00972273 /* SignUpViewController.swift in Sources */,
 				506DC95124164152000B6DB1 /* NetworkManager.swift in Sources */,
 				506DC9552416558D000B6DB1 /* UploadViewController.swift in Sources */,
 				50E48D54240E94B0000D03A6 /* Course.swift in Sources */,
@@ -349,6 +356,7 @@
 				50E48D65240EB41E000D03A6 /* CourseTableViewCell.swift in Sources */,
 				50E48D4C240D52E2000D03A6 /* GETViewController.swift in Sources */,
 				50F7DBF1243F43D200510B11 /* AlamofireNetworkRequest.swift in Sources */,
+				5026FCCA245C163C00972273 /* SignInViewController.swift in Sources */,
 				50A1C2832416327B00ED4344 /* MainCollectionViewCell.swift in Sources */,
 				50084019245426CE009B9567 /* UserProfile.swift in Sources */,
 				503F7FC5244C961D004043E8 /* LoginViewController.swift in Sources */,

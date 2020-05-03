@@ -23,10 +23,9 @@ class UserProfileVC: UIViewController {
         y: self.view.frame.height - 110,
         width: self.view.frame.width - 64,
         height: 50)
-        button.backgroundColor = .blue
+        button.backgroundColor = UIColor(red: 10.0/255, green: 113.0/255, blue: 255.0/255, alpha: 1)
         button.layer.cornerRadius = 5
-        button.layer.borderWidth = 0.5
-        button.setTitle("Log Out", for: .normal)
+        button.setTitle("Выйти", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(signOut), for: .touchUpInside)
@@ -55,9 +54,15 @@ class UserProfileVC: UIViewController {
     }
     
     private func setGradientBackground() {
-        let colorTop =  UIColor(red: 210.0/255.0, green: 109.0/255.0, blue: 108.0/255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 107/255, green: 148/255, blue: 230/255, alpha: 1).cgColor
-
+        let colorTop =  UIColor(red: 11.0/255.0,
+                                green: 26.0/255.0,
+                                blue: 189.0/255.0,
+                                alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 112.0/255.0,
+                                  green: 122.0/255.0,
+                                  blue: 224.0/255.0,
+                                  alpha: 1.0).cgColor
+        
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.locations = [0.0, 1.0]
@@ -101,10 +106,11 @@ extension UserProfileVC {
                     
                     guard let usersData = snapshot.value as? [String: Any] else { return }
                     self.currentUser = CurrentUsers(id: uid, data: usersData)
+                    print(usersData)
                     self.activityIndicator.stopAnimating()
                     self.userNameLabel.isHidden = false
                     self.userNameLabel.text = self.getProviderData()
-                    
+                    print(self.currentUser ?? "no curent")
                 }) { (error) in
                     print(error)
             }
@@ -150,7 +156,7 @@ extension UserProfileVC {
                     break
                 }
             }
-            byeMessage = "\(currentUser?.name ?? "Noname") \n logget out \n with \(provider ?? "App")"
+            byeMessage = "  \(currentUser?.name ?? "Noname"), \n хотите выйти из аккаунта \n \(provider ?? "App")?"
         }
         return byeMessage
     }
