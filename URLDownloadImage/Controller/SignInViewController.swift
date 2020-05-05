@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignInViewController: UIViewController {
     //MARK: Outlets
@@ -15,6 +16,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     //MARK: Variables and Constants
+    private let activityIndicator = UIActivityIndicatorView()
     private lazy var continueButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 150, height: 40)
@@ -25,8 +27,10 @@ class SignInViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 19)
         button.backgroundColor = UIColor(red: 10.0/255, green: 113.0/255, blue: 255.0/255, alpha: 1)
         button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(goContinueButton), for: .touchUpInside)
         return button
     }()
+    
     
     //MARK: viewDidLoad
     override func viewDidLoad() {
@@ -34,6 +38,7 @@ class SignInViewController: UIViewController {
         updateView()
         setContinueButton(enable: false)
         observeTextField()
+        createActivity()
     }
     
     //MARK: viewWillAppear
@@ -74,6 +79,15 @@ class SignInViewController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(textFieldChange), for: .editingChanged)
     }
     
+    //activityIndicator
+    private func createActivity() {
+        activityIndicator.style = .medium
+        activityIndicator.color = .white
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.center = continueButton.center
+        view.addSubview(activityIndicator)
+    }
+    
     //MARK: Target
     //проверка на заполненые поля и изменение активности кнопки
     @objc private func textFieldChange() {
@@ -95,6 +109,37 @@ class SignInViewController: UIViewController {
                                             keyboardFrame.height -
                                             16.0 -
                                             continueButton.frame.height / 2)
+        activityIndicator.center = continueButton.center
     }
     
+    //вход в приложение
+    @objc func goContinueButton() {
+        setContinueButton(enable: false)
+        continueButton.setTitle("", for: .normal)
+        activityIndicator.startAnimating()
+        
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text
+            else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                self.setContinueButton(enable: true)
+                self.continueButton.setTitle("Продолжить", for: .normal)
+                self.activityIndicator.stopAnimating()
+                return
+            }
+            
+            print("sign in with email")
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    //скрытие клавиатуры
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if touches.first != nil {
+            view.endEditing(true)
+        }
+    }
 }

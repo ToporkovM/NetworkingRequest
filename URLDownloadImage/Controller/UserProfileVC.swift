@@ -8,10 +8,9 @@
 
 import UIKit
 import FBSDKLoginKit
-import FirebaseAuth
 import FirebaseDatabase
+import Firebase
 import GoogleSignIn
-
 class UserProfileVC: UIViewController {
     
     private var provider: String?
@@ -20,7 +19,7 @@ class UserProfileVC: UIViewController {
     private lazy var signOutButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 32,
-        y: self.view.frame.height - 110,
+        y: self.view.frame.height - 160,
         width: self.view.frame.width - 64,
         height: 50)
         button.backgroundColor = UIColor(red: 10.0/255, green: 113.0/255, blue: 255.0/255, alpha: 1)
@@ -98,21 +97,28 @@ extension UserProfileVC {
         
         if Auth.auth().currentUser != nil {
             
-            guard let uid = Auth.auth().currentUser?.uid else { return }
-            Database.database().reference()
-                .child("users")
-                .child(uid)
-                .observeSingleEvent(of: .value, with: { (snapshot) in
-                    
-                    guard let usersData = snapshot.value as? [String: Any] else { return }
-                    self.currentUser = CurrentUsers(id: uid, data: usersData)
-                    print(usersData)
-                    self.activityIndicator.stopAnimating()
-                    self.userNameLabel.isHidden = false
-                    self.userNameLabel.text = self.getProviderData()
-                    print(self.currentUser ?? "no curent")
-                }) { (error) in
-                    print(error)
+            if let userName = Auth.auth().currentUser?.displayName {
+                self.activityIndicator.stopAnimating()
+                self.userNameLabel.isHidden = false
+                self.userNameLabel.text = self.getProviderData(with: userName)
+            } else {
+                
+                guard let uid = Auth.auth().currentUser?.uid else { return }
+                Database.database().reference()
+                    .child("users")
+                    .child(uid)
+                    .observeSingleEvent(of: .value, with: { (snapshot) in
+                        
+                        guard let usersData = snapshot.value as? [String: Any] else { return }
+                        self.currentUser = CurrentUsers(id: uid, data: usersData)
+                        print(usersData)
+                        self.activityIndicator.stopAnimating()
+                        self.userNameLabel.isHidden = false
+                        self.userNameLabel.text = self.getProviderData(with: self.currentUser?.name ?? "Noname")
+                        print(self.currentUser ?? "no curent")
+                    }) { (error) in
+                        print(error)
+                }
             }
         }
     }
@@ -132,14 +138,21 @@ extension UserProfileVC {
                     openLoginVC()
                     GIDSignIn.sharedInstance()?.signOut()
                     print("Log out of to Google")
+                case "password":
+                    do {
+                        try Auth.auth().signOut()
+                        openLoginVC()
+                    } catch let error {
+                        print(error.localizedDescription)
+                    }
                 default:
-                    print("Log out of to \(userInfo.providerID))")
+                    print("Log out of to \(userInfo.providerID)")
                 }
             }
         }
     }
     
-    private func getProviderData() -> String {
+    private func getProviderData(with user: String) -> String {
         
         var byeMessage = ""
         
@@ -152,11 +165,13 @@ extension UserProfileVC {
                     provider = "Facebook"
                 case "google.com":
                     provider = "Google"
+                case "password":
+                    provider = "Email"
                 default:
                     break
                 }
             }
-            byeMessage = "  \(currentUser?.name ?? "Noname"), \n хотите выйти из аккаунта \n \(provider ?? "App")?"
+            byeMessage = "  \(user), \n хотите выйти из аккаунта \n \(provider ?? "App")?"
         }
         return byeMessage
     }

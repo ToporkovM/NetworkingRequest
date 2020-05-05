@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
     //MARK: Outlets
@@ -16,6 +17,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmTextField: UITextField!
     
     //MARK: Variables and Constant
+    private let activityIndicator = UIActivityIndicatorView()
     private lazy var signUpButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 150, height: 40)
@@ -26,6 +28,7 @@ class SignUpViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 19)
         button.backgroundColor = UIColor(red: 10.0/255, green: 113.0/255, blue: 255.0/255, alpha: 1)
         button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(goSignUpButton), for: .touchUpInside)
     
        return button
     }()
@@ -36,6 +39,7 @@ class SignUpViewController: UIViewController {
         updateView()
         observeTextField()
         setContinueButton(enable: false)
+        createActivity()
         
     }
     
@@ -73,6 +77,14 @@ class SignUpViewController: UIViewController {
     
     }
     
+    private func createActivity() {
+        activityIndicator.style = .medium
+        activityIndicator.color = .white
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.center = signUpButton.center
+        view.addSubview(activityIndicator)
+    }
+    
     //MARK: Target
     @objc private func changeTextField() {
         guard let email = emailTextField.text,
@@ -97,7 +109,55 @@ class SignUpViewController: UIViewController {
                                             keyboardFrame.height -
                                             16.0 -
                                             signUpButton.frame.height / 2)
+        activityIndicator.center = signUpButton.center
     }
     
-
+    //регистрация в firbase по email
+    @objc func goSignUpButton() {
+        setContinueButton(enable: false)
+        signUpButton.setTitle("", for: .normal)
+        activityIndicator.startAnimating()
+        
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text,
+            let userName = nameTextField.text
+            else { return }
+        
+        //запрос на регистрацию нового пользователя
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                self.setContinueButton(enable: true)
+                self.signUpButton.setTitle("Sign Up", for: .normal)
+                self.activityIndicator.stopAnimating()
+            }
+            print("Successfully into Firbase with email")
+            
+            //запрос на изменение имени
+            if let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() {
+                
+                changeRequest.displayName = userName
+                changeRequest.commitChanges { (error) in
+                    
+                    if let error = error {
+                        print(error.localizedDescription)
+                        self.setContinueButton(enable: true)
+                        self.signUpButton.setTitle("Sign Up", for: .normal)
+                        self.activityIndicator.stopAnimating()
+                    }
+                    //закрываем 3 viewController
+                    self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                }
+            }
+            
+        }
+    }
+    
+    //скрытие клавиатуры
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if touches.first != nil {
+            view.endEditing(true)
+        }
+    }
 }

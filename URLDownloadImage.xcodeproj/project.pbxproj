@@ -34,7 +34,7 @@
 		50E48D65240EB41E000D03A6 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D64240EB41E000D03A6 /* CourseTableViewCell.swift */; };
 		50E48D6B240FB3CD000D03A6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E48D6A240FB3CD000D03A6 /* WebViewController.swift */; };
 		50F7DBF1243F43D200510B11 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7DBF0243F43D200510B11 /* AlamofireNetworkRequest.swift */; };
-		7ED081786184B03BB864CC72 /* Pods_URLDownloadImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F45B6420A46D28025ACE1FB /* Pods_URLDownloadImage.framework */; };
+		803182FB2BADA06EEA395709 /* Pods_URLDownloadImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE25758F6FB369EDD23DE83 /* Pods_URLDownloadImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,7 +52,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0F45B6420A46D28025ACE1FB /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F685E05AB9169D92259F338 /* Pods-URLDownloadImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDownloadImage.release.xcconfig"; path = "Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage.release.xcconfig"; sourceTree = "<group>"; };
 		50084018245426CE009B9567 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		5008401A2456BC27009B9567 /* CurrentUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUsers.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		50E48D6A240FB3CD000D03A6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		50F7DBF0243F43D200510B11 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
 		50F7DC12243F479F00510B11 /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDE25758F6FB369EDD23DE83 /* Pods_URLDownloadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLDownloadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3F4925E0DCA2CED36343EF /* Pods-URLDownloadImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDownloadImage.debug.xcconfig"; path = "Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ED081786184B03BB864CC72 /* Pods_URLDownloadImage.framework in Frameworks */,
+				803182FB2BADA06EEA395709 /* Pods_URLDownloadImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				503F7FBC2445E143004043E8 /* Alamofire.framework */,
-				0F45B6420A46D28025ACE1FB /* Pods_URLDownloadImage.framework */,
+				EDE25758F6FB369EDD23DE83 /* Pods_URLDownloadImage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,8 +218,8 @@
 				50E48D11240D0BDF000D03A6 /* Frameworks */,
 				50E48D12240D0BDF000D03A6 /* Resources */,
 				502F28C32441A1CF00A9DE7A /* Embed Frameworks */,
-				8B1413010CC9A7965F38EB67 /* [CP] Embed Pods Frameworks */,
 				395609D16F4AF5EE4EA222F4 /* [CP] Copy Pods Resources */,
+				7DE4705C8EF17DF5371E5D2C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,7 +295,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-URLDownloadImage/Pods-URLDownloadImage-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8B1413010CC9A7965F38EB67 /* [CP] Embed Pods Frameworks */ = {
+		7DE4705C8EF17DF5371E5D2C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

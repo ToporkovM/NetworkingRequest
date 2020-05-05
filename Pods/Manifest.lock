@@ -11,10 +11,13 @@ PODS:
   - FBSDKCoreKit/Basics (6.4.0)
   - FBSDKCoreKit/Core (6.4.0):
     - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (6.4.0):
-    - FBSDKLoginKit/Login (= 6.4.0)
+  - FBSDKCoreKit/Swift (6.4.0):
+    - FBSDKCoreKit/Core
   - FBSDKLoginKit/Login (6.4.0):
     - FBSDKCoreKit (~> 6.4.0)
+  - FBSDKLoginKit/Swift (6.4.0):
+    - FBSDKCoreKit/Swift (~> 6.4.0)
+    - FBSDKLoginKit/Login
   - Firebase/Auth (6.22.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.5.1)
@@ -85,8 +88,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - FBSDKCoreKit
-  - FBSDKLoginKit
+  - FBSDKCoreKit/Swift
+  - FBSDKLoginKit/Swift
   - Firebase/Auth
   - Firebase/Database
   - GoogleSignIn
@@ -134,6 +137,6 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
 
-PODFILE CHECKSUM: 39fac9d71cc0c52aa42299983d48715fef887130
+PODFILE CHECKSUM: 052c973f261bb9e4aa32ab0e08227946f5ebde7d
 
 COCOAPODS: 1.9.1
